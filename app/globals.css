@@ -1,12 +1,28 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-primary: #000;
+  --background-secondary: #fafafa;
+
+  --text-primary: #ededed;
+  --text-secondary: #000;
+  --text-tertiary: #999;
+
+  --button-primary-hover: #ccc;
+  --button-secondary-hover: #1a1a1a;
+  --button-secondary-border: #1a1a1a;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background-primary: #fafafa;
+    --background-secondary: #000;
+
+    --text-primary: #000;
+    --text-secondary: #ededed;
+    --text-tertiary: #666;
+
+    --button-primary-hover: #383838;
+    --button-secondary-hover: #f2f2f2;
+    --button-secondary-border: #ebebeb;
   }
 }
 
@@ -14,11 +30,12 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: var(--font-geist-sans);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--text-primary);
+  background: var(--background-primary);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,9 +47,57 @@ body {
   margin: 0;
 }
 
+.main {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: var(--background-primary);
+  padding: 120px 60px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -2.4px;
+  text-wrap: balance;
+  color: var(--text-primary);
+  margin: 2rem 0;
+}
+
+p {
+  font-size: 18px;
+  line-height: 32px;
+  text-wrap: balance;
+  color: var(--text-tertiary);
+}
+
+.primary-button {
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
+}
+
+.primary-button:hover {
+  background-color: var(--button-primary-hover);
+}
+
+.secondary-button {
+  border: 2px solid var(--button-secondary-border)
+}
+
+.secondary-button:hover {
+  background-color: var(--button-secondary-hover);
 }
 
 @media (prefers-color-scheme: dark) {
