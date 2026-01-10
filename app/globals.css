@@ -63,7 +63,6 @@ a {
   color: inherit;
   text-decoration: none;
   font-weight: 500;
-  color: var(--text-primary);
 }
 
 h1 {
@@ -83,8 +82,23 @@ p {
   color: var(--text-tertiary);
 }
 
+button {
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+}
+
+button:hover {
+  transition: 0.3s;
+}
+
 .primary-button {
   background-color: var(--background-secondary);
+  color: var(--text-secondary);
+}
+
+.primary-button > * {
   color: var(--text-secondary);
 }
 
@@ -93,7 +107,13 @@ p {
 }
 
 .secondary-button {
-  border: 2px solid var(--button-secondary-border)
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--button-secondary-border)
+}
+
+.secondary-button > * {
+  color: var(--text-primary);
 }
 
 .secondary-button:hover {
