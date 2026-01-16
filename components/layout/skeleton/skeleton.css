@@ -1,0 +1,76 @@
+.skeleton {
+  animation: skeleton-loading 0.75s linear infinite alternate;
+  width: 100%;
+  margin: 1rem auto;
+  border-radius: 0.25rem;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(0, 0%, 10%);
+  }
+  100% {
+    background-color: hsl(0, 0%, 8%);
+  }
+}
+
+.skeleton-list {
+  height: 2rem;
+}
+
+.skeleton-section {
+  height: 10rem;
+}
+
+.skeleton-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skeleton-cards {
+  width: 16rem;
+  height: 7rem;
+}
+
+.skeleton-graph-container, .skeleton-graph-content {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.skeleton-graph-content > * {
+  width: 2rem;
+  margin: 0 0.5rem;
+}
+
+.bar-low {
+  height: 3rem;
+}
+
+.bar-middle {
+  height: 5rem;
+}
+
+.bar-high {
+  height: 7rem;
+}
+
+.skeleton-reviews-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skeleton-reviews {
+  height: 15rem;
+  width: 20rem;
+  margin: 1rem;
+}
+
+.skeleton-image {
+  height: 20rem;
+  width: 30rem;
+  margin: 0;
+}

@@ -4,7 +4,7 @@
 
   --text-primary: #ededed;
   --text-secondary: #000;
-  --text-tertiary: #999;
+  --text-tertiary: #696969;
 
   --button-primary-hover: #ccc;
   --button-secondary-hover: #1a1a1a;
@@ -75,10 +75,13 @@ h1 {
   margin: 2rem 0;
 }
 
+h2 {
+  font-size: 32px;
+}
+
 p {
   font-size: 18px;
   line-height: 32px;
-  text-wrap: balance;
   color: var(--text-tertiary);
 }
 
@@ -86,7 +89,15 @@ button {
   border: none;
   border-radius: 2rem;
   padding: 0.75rem 1rem;
-  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button > * {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button:hover {
