@@ -1,4 +1,5 @@
 import "./page.css";
+import Projects from "@/components/home/Projects";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
             sit possimus veniam ut temporibus rerum.
           </p>
         </div>
+        <Projects />
       </main>
   );
 }

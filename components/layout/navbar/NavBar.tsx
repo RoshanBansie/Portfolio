@@ -3,7 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import { motion } from "motion/react"
-import Menu from "@/components/menu/menu"
+import Menu from "@/components/widgets/menu/menu"
 import ToggleLink from "./ToggleLink"
 import "./navbar.css"
 
