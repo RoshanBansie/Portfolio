@@ -1,0 +1,31 @@
+@import "@/app/globals.css";
+
+.education-section {
+    margin: 10rem auto;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.education-subcontainer {
+    margin-top: 2rem;
+}
+
+.education-subcontainer li {
+    color: var(--text-tertiary);
+}
+
+.education-subcontainer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.education-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 2px solid var(--button-secondary-border);
+    padding: 0 2rem;
+    margin-top: 1rem;
+}
