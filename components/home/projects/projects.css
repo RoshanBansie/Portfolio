@@ -50,8 +50,6 @@
 }
 
 .project-card-image {
-    /* Height is defined in Projects.tsx */
-    width: 100%;
     border-radius: 1rem;
 }
 

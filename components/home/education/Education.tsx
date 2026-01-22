@@ -1,8 +1,15 @@
 import { JSX } from "react"
 import "./education.css"
+import ImageUI from "@/components/widgets/imageui/ImageUI"
 
 type EducationObj = {
     institute: string,
+    image: {
+        src: string,
+        width: number,
+        height: number,
+        alt: string
+    }
     milestones: {
         type: string,
         start: number,
@@ -21,6 +28,12 @@ export default function Education() {
     const education: EducationObj[] = [
         {
             institute: "University of Amsterdam",
+             image: {
+                src: "/assets/uva-logo.png",
+                width: 1936,
+                height: 1936,
+                alt: "UvA logo"
+            },
             milestones: [
                 {
                     type: "Bachelor Informatica",
@@ -45,6 +58,13 @@ export default function Education() {
         },
         {
             institute: "Scrimba",
+            image: {
+                src: "/assets/scrimba-logo.png",
+                width: 800,
+                height: 800,
+                alt: "Scrimba logo"
+
+            },
             milestones: [
                 {
                     type: "Online courses",
@@ -56,6 +76,12 @@ export default function Education() {
         },
         {
             institute: "Het Baken Trinitas Gymnasium",
+            image: {
+                src: "/assets/trinitas-logo.png",
+                width: 232,
+                height: 218,
+                alt: "Trinitas logo"
+            },
             milestones: [
                 {
                     type: "Highschool",
@@ -74,41 +100,65 @@ export default function Education() {
     // The key is used to distinguish different milestones from each other.
     // Returns null on error.
     function getEducationBlock(educationBlock: EducationObj, key: number): null | JSX.Element {
-        const {institute, milestones} = educationBlock
+        const { institute, image, milestones } = educationBlock
+        const { src, width, height, alt } = image
+
         if (milestones.length < 1) {
             return null
         }
         return milestones.length == 1 ? (
             // Educational milestone doesn't have submilestones within one institute.
             <div className="education-subcontainer" key={"milestone-" + key}>
-                <h3>{institute}</h3>
-                <h4>{milestones[0].type}</h4>
-                <p>{milestones[0].start + "-" + milestones[0].end}</p>
-                <ul>
-                    {milestones[0].skills.map(skill => (
-                        <li>{skill}</li>
-                    ))}
-                </ul>
+                <ImageUI
+                    src={src}
+                    originalWidth={width}
+                    originalHeight={height}
+                    alt={alt}
+                    height="50px"
+                    width="50px"
+                    className="institute-logo"
+                />
+                <div className="education-description">
+                    <h3>{institute}</h3>
+                    <h4>{milestones[0].type}</h4>
+                    <p>{milestones[0].start + "-" + milestones[0].end}</p>
+                    <ul>
+                        {milestones[0].skills.map((skill, i) => (
+                            <li key={institute + "-skill-" + i}>{skill}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         ) : (
             // Educational milestone has submilestones within one institute so group them togehter.
             <div className="education-container" key={"milestone-" + key}>
-                <h3>{institute}</h3>
-                <div className="education-group">
-                    {milestones.map((milestone, i) => {
-                        const {type, start, end, skills} = milestone
-                        return (
-                            <div className="education-subcontainer" key={"milestone-" + i}>
-                                <h4>{type}</h4>
-                                <p>{start + "-" + end}</p>
-                                <ul>
-                                    {skills.map((skill, i) => (
-                                        <li key={"skill-" + i}>{skill}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )
-                    })}
+                <ImageUI
+                    src={src}
+                    originalWidth={width}
+                    originalHeight={height}
+                    alt={alt}
+                    width="50px"
+                    height="50px"
+                    className="institute-logo"
+                />
+                <div className="education-description">
+                    <h3>{institute}</h3>
+                    <div className="education-group">
+                        {milestones.map((milestone, i) => {
+                            const {type, start, end, skills} = milestone
+                            return (
+                                <div className="education-subcontainer" key={"milestone-" + i}>
+                                    <h4>{type}</h4>
+                                    <p>{start + "-" + end}</p>
+                                    <ul>
+                                        {skills.map((skill, i) => (
+                                            <li key={"skill-" + i}>{skill}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         )

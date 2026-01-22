@@ -1,8 +1,5 @@
-"use client"
-import React from "react"
-import Image from "next/image"
 import Link from "next/link"
-import Skeleton from "../../layout/skeleton/Skeleton"
+import ImageUI from "@/components/widgets/imageui/ImageUI"
 import "./projects.css"
 
 type ProjectCard = {
@@ -19,22 +16,6 @@ type ProjectCard = {
 }
 
 export default function Projects() {
-
-    const [isLoading, setIsLoading] = React.useState({})
-
-    // Adds the loading state of a specific image identified
-    // by the given key.
-    function addLoadingState(key: string) {
-        if (!Object.keys(isLoading).includes(key)) {
-            return
-        }
-        setIsLoading(prev => {
-            return {
-                ...prev,
-                [key]: true
-            }
-        })
-    }
 
     const projects: ProjectCard[] = [
         {
@@ -56,17 +37,15 @@ export default function Projects() {
     function getProjectCard(project: ProjectCard) {
         const {title, description, tags, image, link} = project
         const {src, width, height, alt} = image
-        addLoadingState(src)
         return (
             <div className="project-card" key={"project-"+title}>
-                {isLoading && <Skeleton type="image" />}
-                <Image 
+                <ImageUI
                     src={src}
-                    width={width}
-                    height={height}
+                    originalWidth={width}
+                    originalHeight={height}
+                    height="20rem"
+                    width="100%"
                     alt={alt}
-                    style={{opacity: isLoading ? "0" : "100", height: isLoading ? "0" : "20rem"}}
-                    onLoadingComplete={() => setIsLoading(false)}
                     className="project-card-image"
                 />
                 <div className="project-description">
