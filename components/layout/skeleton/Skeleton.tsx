@@ -1,10 +1,12 @@
 import "./skeleton.css"
 
 type Props = {
-    type: string
+    type: string,
+    width?: string, // String so the user can specify the unit as well.
+    height?: string
 }
 
-export default function Skeleton({type}: Props) {
+export default function Skeleton({type, width, height}: Props) {
 
     if (type === "list") {
         return (
@@ -59,7 +61,10 @@ export default function Skeleton({type}: Props) {
 
     } else if (type === "image") {
         return (
-            <div className="skeleton skeleton-image"></div>
+            <div 
+                className="skeleton skeleton-image"
+                style={{height: height ? height : "20rem", width: width ? width : "30rem"}}
+            ></div>
         )
     } else {
         return (
