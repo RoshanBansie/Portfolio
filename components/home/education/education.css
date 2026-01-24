@@ -8,26 +8,26 @@
     align-items: center;
 }
 
-.education-container {
+.milestone-container {
     display: flex;
     align-items: top;
     gap: 1rem;
 }
 
-.education-subcontainer {
+.milestone-container, .milestone-group > * {
     margin-top: 2rem;
 }
 
-.education-subcontainer li {
+.milestone-subcontainer li {
     color: var(--text-tertiary);
 }
 
-.education-subcontainer ul {
+.milestone-subcontainer ul {
     padding: 0;
     list-style: none;
 }
 
-.education-group {
+.milestone-group {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,4 +38,8 @@
 
 .education-section h3, .education-section h4 {
     text-transform: capitalize;
+}
+
+.institute-logo {
+    border-radius: 5px;
 }

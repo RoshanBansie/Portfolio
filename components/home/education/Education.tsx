@@ -2,7 +2,7 @@ import { JSX } from "react"
 import "./education.css"
 import ImageUI from "@/components/widgets/imageui/ImageUI"
 
-type EducationObj = {
+type MilestonesObj = {
     institute: string,
     image: {
         src: string,
@@ -25,7 +25,7 @@ type EducationObj = {
 // All the data needed to generate the JSX is within this component.
 export default function Education() {
 
-    const education: EducationObj[] = [
+    const education: MilestonesObj[] = [
         {
             institute: "University of Amsterdam",
              image: {
@@ -99,39 +99,17 @@ export default function Education() {
     // Returns JSX element of a single educational milestone on the timeline.
     // The key is used to distinguish different milestones from each other.
     // Returns null on error.
-    function getEducationBlock(educationBlock: EducationObj, key: number): null | JSX.Element {
-        const { institute, image, milestones } = educationBlock
+    function getMilestoneBlock(milestoneBlock: MilestonesObj, key: number): null | JSX.Element {
+        const { institute, image, milestones } = milestoneBlock
         const { src, width, height, alt } = image
 
         if (milestones.length < 1) {
             return null
         }
-        return milestones.length == 1 ? (
-            // Educational milestone doesn't have submilestones within one institute.
-            <div className="education-subcontainer" key={"milestone-" + key}>
-                <ImageUI
-                    src={src}
-                    originalWidth={width}
-                    originalHeight={height}
-                    alt={alt}
-                    height="50px"
-                    width="50px"
-                    className="institute-logo"
-                />
-                <div className="education-description">
-                    <h3>{institute}</h3>
-                    <h4>{milestones[0].type}</h4>
-                    <p>{milestones[0].start + "-" + milestones[0].end}</p>
-                    <ul>
-                        {milestones[0].skills.map((skill, i) => (
-                            <li key={institute + "-skill-" + i}>{skill}</li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        ) : (
+
+        return (
             // Educational milestone has submilestones within one institute so group them togehter.
-            <div className="education-container" key={"milestone-" + key}>
+            <div className="milestone-container" key={"milestone-" + key}>
                 <ImageUI
                     src={src}
                     originalWidth={width}
@@ -141,13 +119,13 @@ export default function Education() {
                     height="50px"
                     className="institute-logo"
                 />
-                <div className="education-description">
+                <div className="milestone-content">
                     <h3>{institute}</h3>
-                    <div className="education-group">
+                    <div className={milestones.length > 1 ? "milestone-group" : ""}>
                         {milestones.map((milestone, i) => {
                             const {type, start, end, skills} = milestone
                             return (
-                                <div className="education-subcontainer" key={"milestone-" + i}>
+                                <div className="milestone-subcontainer" key={"milestone-" + i}>
                                     <h4>{type}</h4>
                                     <p>{start + "-" + end}</p>
                                     <ul>
@@ -168,7 +146,7 @@ export default function Education() {
         <section className="education-section">
             <h2>Education</h2>
             <div className="education-content">
-               {education.map((educationBlock, i) => getEducationBlock(educationBlock, i))}
+               {education.map((milestoneBlock, i) => getMilestoneBlock(milestoneBlock, i))}
             </div>
         </section>
     )
