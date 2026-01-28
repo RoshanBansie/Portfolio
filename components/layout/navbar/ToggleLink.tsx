@@ -1,10 +1,6 @@
 import { motion } from "motion/react"
 import Link from "next/link"
-
-type NavLinkProps = {
-    path: string,
-    children: React.ReactNode
-}
+import type { NavLinkProps } from "@/app/types"
 
 export default function ToggleLink({path, children}: NavLinkProps) {
     return (

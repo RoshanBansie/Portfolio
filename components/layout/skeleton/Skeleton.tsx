@@ -1,12 +1,7 @@
 import "./skeleton.css"
+import type { SkeletonProps } from "@/app/types"
 
-type Props = {
-    type: string,
-    width?: string, // String so the user can specify the unit as well.
-    height?: string
-}
-
-export default function Skeleton({type, width, height}: Props) {
+export default function Skeleton({type, width, height}: SkeletonProps) {
 
     if (type === "list") {
         return (
