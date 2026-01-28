@@ -76,7 +76,8 @@ h1 {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 60px;
+  margin: 1rem 0;
 }
 
 p {
@@ -89,12 +90,14 @@ button {
   border: none;
   border-radius: 2rem;
   padding: 0.75rem 1rem;
+  font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 button > * {
+  font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -129,6 +132,17 @@ button:hover {
 
 .secondary-button:hover {
   background-color: var(--button-secondary-hover);
+}
+
+.error-container {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-primary);
+  border: 1px solid var(--button-secondary-border);
+  border-radius: 10px;
+  padding: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
