@@ -1,22 +1,7 @@
 import { JSX } from "react"
 import "./education.css"
 import ImageUI from "@/components/widgets/imageui/ImageUI"
-
-type MilestonesObj = {
-    institute: string,
-    image: {
-        src: string,
-        width: number,
-        height: number,
-        alt: string
-    }
-    milestones: {
-        type: string,
-        start: number,
-        end: number | string,
-        skills: string[]
-    }[]
-}
+import type { MilestonesObj } from "@/app/types"
 
 // Component that displays the education section on the homepage.
 // Creates a timeline of my educational milestones given by an array of objects

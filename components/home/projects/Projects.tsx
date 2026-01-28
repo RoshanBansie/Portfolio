@@ -1,19 +1,8 @@
 import Link from "next/link"
 import ImageUI from "@/components/widgets/imageui/ImageUI"
 import "./projects.css"
+import type { ProjectCard } from "@/app/types"
 
-type ProjectCard = {
-    title: string,
-    description: string,
-    tags: string[],
-    image: {
-        src: string,
-        width: number,
-        height: number,
-        alt: string,
-    },
-    link: string
-}
 
 export default function Projects() {
 

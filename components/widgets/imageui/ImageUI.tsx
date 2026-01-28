@@ -3,16 +3,8 @@
 import React from "react"
 import Skeleton from "@/components/layout/skeleton/Skeleton"
 import Image from "next/image"
+import type { ImageUIProps } from "@/app/types"
 
-type ImageUIProps = {
-    src: string,
-    originalHeight: number,
-    originalWidth: number,
-    height: string,
-    width: string,
-    alt: string,
-    className?: string,
-}
 
 // Extension of Next.js' Image component that also
 // keeps state of the loading status of the image.

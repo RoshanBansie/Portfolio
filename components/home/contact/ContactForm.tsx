@@ -5,6 +5,7 @@ import "./contact.css"
 import Link from "next/link"
 import { MdOutlineArrowOutward } from "react-icons/md"
 import { AiOutlineExclamationCircle } from "react-icons/ai"
+import type { ContactFormData } from "@/app/types"
 import { FaCheck } from "react-icons/fa6"
 import sendMail from "@/utils/sendMail"
 import Spinner from "@/components/widgets/spinner/Spinner"
@@ -14,14 +15,6 @@ import {
     validateSubject,
     validateMessage
  } from "../../../utils/FormValidation"
-
-export type ContactFormData = {
-    fullName: string,
-    email: string,
-    message: string,
-    subject: string,
-    company: string
-}
 
 export default function ContactForm() {
     const [formData, setFormData] = React.useState<ContactFormData>({
