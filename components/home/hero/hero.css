@@ -1,16 +1,18 @@
 .hero {
     margin: 20rem auto;
-    width: 90%;
+    text-align: center;
 }
 
 .hero p {
     max-width: 50%;
+    margin: 0 auto;
 }
 
 .hero-buttons {
     display: flex;
     align-items: center;
-    margin: 1rem 0;
+    justify-content: center;
+    margin: 2rem auto;
     gap: 1rem;
 }
 

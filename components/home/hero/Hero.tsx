@@ -13,10 +13,10 @@ export default function Hero() {
 
     return (
         <section className="hero">
-          <h1>Hey, my name is Roshan</h1>
+          <h1>Turning your designs into a great UX</h1>
           <p>
-            Computer Science student developing full-stack apps that solve everyday problems
-            using React.js, Typescript, Next.js, Express.js, Node.js and SQL. 
+            I'm Roshan Bansie, Computer Science student developing modern full-stack apps that solve everyday problems
+            focusing on the optimal UX.
           </p>
           <div className="hero-buttons">
             <button className="primary-button" onClick={() => setHasDownloaded(true)}>

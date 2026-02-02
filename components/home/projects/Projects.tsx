@@ -32,7 +32,7 @@ export default function Projects() {
                     src={src}
                     originalWidth={width}
                     originalHeight={height}
-                    height="20rem"
+                    height="25rem"
                     width="100%"
                     alt={alt}
                     className="project-card-image"
@@ -57,7 +57,13 @@ export default function Projects() {
 
     return (
         <section className="projects-section">
-            <h2>Projects<span>I've been working on lately</span></h2>
+            <div className="projects-section-header">
+                <h2>Explore what I've been up to lately </h2>
+                <p>
+                    Below are my projects listed that showcase my experience
+                    in fullstack webdevelopment so far
+                </p>
+            </div>
             <div className="projects-container">
                 {projects.map(project => getProjectCard(project))}
             </div>

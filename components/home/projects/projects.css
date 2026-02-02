@@ -1,9 +1,15 @@
 @import "@/app/globals.css";
 
 .projects-section {
-    margin: 0 auto;
-    width: 90%;
     max-width: 1800px;
+}
+
+.projects-section-header h2 {
+    max-width: 40%;
+}
+
+.projects-section-header p {
+    max-width: 50%;
 }
 
 .projects-container {
@@ -13,13 +19,8 @@
     gap: 2rem;   
 }
 
-.projects-section span {
-    color: var(--text-tertiary);
-    margin-left: 0.5rem;
-}
-
 .project-card {
-    width: 30rem;
+    width: 40rem;
 }
 
 .project-header {
@@ -51,6 +52,7 @@
 
 .project-card-image {
     border-radius: 1rem;
+    border: 1px solid var(--button-secondary-border);
 }
 
 .project-card button {
