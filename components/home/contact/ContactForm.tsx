@@ -95,7 +95,7 @@ export default function ContactForm() {
 
     return (
         <section className="contact-container">
-            <div className="contact-text">
+            <div className="contact-section-header">
                 <h2>Lets get in touch</h2>
                 <p>
                     Use the contact form to the right for further inquiries.

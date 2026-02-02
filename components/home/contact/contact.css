@@ -2,18 +2,16 @@
 
 .contact-container {
     margin: 30rem auto;
-    width: 70%;
     display: flex;
     align-items: top;
-    justify-content: space-evenly;
-    gap: 3rem;
+    justify-content: space-between;
 }
 
-.contact-text {
-    max-width: 50%;
+.contact-section-header {
+    max-width: 40%;
 }
 
-.contact-text button {
+.contact-section-header button {
     margin: 1rem 0; 
 }
 
@@ -75,7 +73,7 @@ input:focus, textarea:focus {
   align-items: center;
   gap: 0.5rem;
   color: var(--text-primary);
-  background-color: var(--button-secondary-border);
+  background-color: var(--button-secondary-hover);
   border: 1px solid var(--text-tertiary);
   border-radius: 10px;
   padding: 1rem;

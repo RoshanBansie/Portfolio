@@ -12,6 +12,24 @@ export default function Education() {
 
     const education: MilestonesObj[] = [
         {
+            institute: "Scrimba",
+            image: {
+                src: "/assets/scrimba-logo.png",
+                width: 800,
+                height: 800,
+                alt: "Scrimba logo"
+
+            },
+            milestones: [
+                {
+                    type: "Online courses",
+                    start: 2024,
+                    end: "present",
+                    skills: [" Learned Javascript, React.js, Typescript, Next.js, Node.js and Express.js"]
+                }
+            ]
+        },
+        {
             institute: "University of Amsterdam",
              image: {
                 src: "/assets/uva-logo.png",
@@ -38,24 +56,6 @@ export default function Education() {
                     skills: [
                         "Introduction to basic statistics and using R to perform analytical tests and create graphs",
                     ]
-                }
-            ]
-        },
-        {
-            institute: "Scrimba",
-            image: {
-                src: "/assets/scrimba-logo.png",
-                width: 800,
-                height: 800,
-                alt: "Scrimba logo"
-
-            },
-            milestones: [
-                {
-                    type: "Online courses",
-                    start: 2024,
-                    end: "present",
-                    skills: [" Learned Javascript, React.js, Typescript, Next.js, Node.js and Express.js"]
                 }
             ]
         },
@@ -112,7 +112,7 @@ export default function Education() {
                             return (
                                 <div className="milestone-subcontainer" key={"milestone-" + i}>
                                     <h4>{type}</h4>
-                                    <p>{start + "-" + end}</p>
+                                    <p className="milestone-period">{start + "-" + end}</p>
                                     <ul>
                                         {skills.map((skill, i) => (
                                             <li key={"skill-" + i}>{skill}</li>
@@ -129,7 +129,13 @@ export default function Education() {
 
     return (
         <section className="education-section">
-            <h2>Education</h2>
+            <div className="education-section-header">
+                <h2>View my educational milestones</h2>
+                <p>
+                    Below are the scholar institutes that I have attended and online courses
+                    that I've completed so far.
+                </p>
+            </div>
             <div className="education-content">
                {education.map((milestoneBlock, i) => getMilestoneBlock(milestoneBlock, i))}
             </div>
