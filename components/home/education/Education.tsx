@@ -130,7 +130,7 @@ export default function Education() {
     return (
         <section className="education-section">
             <div className="education-section-header">
-                <h2>View my educational milestones</h2>
+                <h2>Educational milestones I've achieved</h2>
                 <p>
                     Below are the scholar institutes that I have attended and online courses
                     that I've completed so far.
