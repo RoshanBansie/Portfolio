@@ -4,12 +4,10 @@
     max-width: 1800px;
 }
 
-.projects-section-header h2 {
+.projects-section-header {
+    text-align: center;
     max-width: 40%;
-}
-
-.projects-section-header p {
-    max-width: 50%;
+    margin: 0 auto;
 }
 
 .projects-container {
