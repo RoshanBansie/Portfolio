@@ -1,0 +1,50 @@
+@import "@/app/globals.css";
+
+.skills {
+    text-align: center;
+}
+
+.skills-section-header {
+    margin: 0 auto;
+    max-width: 40%;
+}
+
+.view-button-inactive {
+    background-color: transparent;
+    text-transform: capitalize;
+}
+
+.view-button-active {
+    background-color: var(--background-secondary);
+    color: var(--text-secondary);
+    text-transform: capitalize;
+}
+
+.skills-nav {
+    margin: 2rem auto;
+    border: 1px solid var(--button-secondary-border);
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.skills-content {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1rem;
+    width: 15rem;
+    padding: 1rem;
+    border: 1px solid var(--button-secondary-border);
+    border-radius: 10px;
+}

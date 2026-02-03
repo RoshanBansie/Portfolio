@@ -55,3 +55,13 @@ export type ImageUIProps = {
     alt: string,
     className?: string,
 }
+
+export type SkillsObj = {
+    area: string,
+    skill: string,
+    logo?: {
+        src: string,
+        initHeight: number,
+        initWidth: number
+    }
+}
