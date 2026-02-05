@@ -1,0 +1,72 @@
+@import "@/app/globals.css";
+
+.philosophy-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+    height: 50vh;
+}
+
+.philosopy-section-header {
+    position: sticky;
+    top: 0;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.about ul {
+    list-style: none;
+    padding: 0;
+}
+
+.oneliners-container {
+    position: relative;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.oneliners-container li {
+    height: 50vh;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.oneliners-container li p {
+    max-width: 90%;
+}
+
+.workflow-section-header {
+    text-align: center;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.workflow-visual {
+    display: flex;
+    align-items: top;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+}
+
+.workflow-visual li {
+    display: flex;
+    align-items: bottom;
+    gap: 0;
+}
+
+.workflow-line {
+    width: 5rem;
+    height: 10rem;
+    border-bottom: 1px solid var(--button-secondary-border);
+}
+
+.step-container {
+    width: 15rem;
+    padding: 1rem;
+    border: 1px solid var(--button-secondary-border);
+    border-radius: 16px;
+}
