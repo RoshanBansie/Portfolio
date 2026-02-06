@@ -37,11 +37,14 @@ export default function About() {
             headline: "List requirements",
             explanation: "Analyse the problem statement and list all functionalities"
         },
+         {
+            headline: "Design database",
+            explanation: "Create an EER diagram for the software or problem statement."
+        },
         {
-            headline: "Design pages and database",
+            headline: "Design pages",
             explanation: 
-            `Analyze which pages need to be created by dividing the requirements over webpages
-            and design an UI for these pages. Also create an EER for the database if applicable`
+            `Divide the requirements over webpages and design an UI for these pages.`
         },
         {
             headline: "Translate design to code",
@@ -88,16 +91,16 @@ export default function About() {
                         I have developed the workflow as described below.
                     </p>
                 </div>
-                <ul className="workflow-visual">
+                <ul className="workflow-list">
                     {workflowSteps.map((step, i) => {
                         const { headline, explanation } = step
                         return (
                             <li>
-                                <div className="step-container">
-                                    <h3>{headline}</h3>
-                                    <p>{explanation}</p>
+                                <div className="workflow-item-enumerator">
+                                    <h5>{i+1}</h5>
                                 </div>
-                                {i < workflowSteps.length-1 ? <div className="workflow-line"></div> : null}
+                                <h4>{headline}</h4>
+                                <p>{explanation}</p>
                             </li>
                         )
                     })}

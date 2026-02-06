@@ -1,7 +1,7 @@
 :root {
   --background-primary: #000;
   --background-secondary: #fafafa;
-  --background-accent: #0051ff;
+  --background-tertiary: #090909;
 
   --text-primary: #ededed;
   --text-secondary: #000;
@@ -88,6 +88,10 @@ h2 {
 
 h3 {
   font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
 }
 
 p {
