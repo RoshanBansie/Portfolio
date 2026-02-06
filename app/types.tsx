@@ -65,3 +65,13 @@ export type SkillsObj = {
         initWidth: number
     }
 }
+
+export type PhilosophyPoint = {
+    headline: string,
+    explanation: string
+}
+
+export type WorkflowStep = {
+    headline: string,
+    explanation: string
+}

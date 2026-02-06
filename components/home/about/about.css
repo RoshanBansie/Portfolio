@@ -8,7 +8,7 @@
     height: 50vh;
 }
 
-.philosopy-section-header {
+.philosophy-section-header {
     position: sticky;
     top: 0;
     height: 50vh;
@@ -21,14 +21,14 @@
     padding: 0;
 }
 
-.oneliners-container {
+.headlines-container {
     position: relative;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
-.oneliners-container li {
+.headlines-container li {
     height: 50vh;
     scroll-snap-align: center;
     display: flex;
@@ -36,7 +36,7 @@
     justify-content: center;
 }
 
-.oneliners-container li p {
+.headlines-container li p {
     max-width: 90%;
 }
 

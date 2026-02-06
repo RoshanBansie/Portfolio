@@ -1,30 +1,31 @@
 import "./about.css"
+import type { PhilosophyPoint, WorkflowStep } from "@/app/types"
 
 export default function About() {
 
-    const philosopyPoints = [
+    const philosophyPoints: PhilosophyPoint[] = [
         {
-            oneLiner:  "Extend code with meaningful comments",
+            headline:  "Extend code with meaningful comments",
             explanation: "Provide sufficient comments to explain my code and design choices"
         },
         {
-            oneLiner: "Write dynamic code",
+            headline: "Write dynamic code",
             explanation: 
             `Avoid DRY and static code so the software can feed on 
             different input with minimal code changes`
         },
         {
-            oneLiner: "Create functional components with minimal dependencies",
+            headline: "Create functional components with minimal dependencies",
             explanation: 
             `Create funcional components with minimal dependencies 
             with other components to facilitate changing the source code in the future`
         },
         {
-            oneLiner: "A keen eye for creating modern looking UI",
+            headline: "A keen eye for creating modern looking UI",
             explanation: "Making the UI of a software modern looking by implementing the newest design trends"
         },
         {
-            oneLiner: "Value UX as much as a good looking UI",
+            headline: "Value UX as much as a good looking UI",
             explanation: 
             `A great UX is as important as a good looking UI 
             to make the website more accesible for everyone. 
@@ -32,7 +33,7 @@ export default function About() {
         }
     ]
 
-    const workflowSteps = [
+    const workflowSteps: WorkflowStep[] = [
         {
             headline: "List requirements",
             explanation: "Analyse the problem statement and list all functionalities"
@@ -65,15 +66,15 @@ export default function About() {
     return (
         <section className="about">
             <div className="philosophy-container">
-                <div className="philosopy-section-header">
-                    <h2>My development philosopy</h2>
+                <div className="philosophy-section-header">
+                    <h2>My development philosophy</h2>
                 </div>
-                <ul className="oneliners-container">
-                    {philosopyPoints.map(item => {
-                        const { oneLiner, explanation } = item
+                <ul className="headlines-container">
+                    {philosophyPoints.map(item => {
+                        const { headline, explanation } = item
                         return (
-                            <li key={oneLiner}>
-                                <h3>{oneLiner}</h3>
+                            <li key={headline}>
+                                <h3>{headline}</h3>
                                 <p>{explanation}</p>
                             </li>
                         )
