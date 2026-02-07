@@ -64,7 +64,7 @@ export default function About() {
     ]
 
     return (
-        <section className="about">
+        <section className="about" id="about-me">
             <div className="philosophy-container">
                 <div className="philosophy-section-header">
                     <h2>My development philosophy</h2>

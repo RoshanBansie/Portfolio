@@ -26,11 +26,6 @@ header {
     align-items: center;
 }
 
-.nav-container a:hover {
-    color: var(--text-primary);
-    transition: 0.3s;
-}
-
 .nav-menu ul {
     display: flex;
     justify-content: center;
