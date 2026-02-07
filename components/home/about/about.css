@@ -1,0 +1,82 @@
+@import "@/app/globals.css";
+
+.philosophy-container {
+    margin: 10rem auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+    height: 50vh;
+}
+
+.philosophy-section-header {
+    position: sticky;
+    top: 0;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.about ul {
+    list-style: none;
+    padding: 0;
+}
+
+.headlines-container {
+    position: relative;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.headlines-container li {
+    height: 50vh;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.headlines-container li p {
+    max-width: 90%;
+}
+
+.workflow-section-header {
+    text-align: center;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.workflow-list {
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1500px;
+}
+
+.workflow-list li {
+    width: 30rem;
+    padding: 1rem;
+    border: 1px solid var(--button-secondary-border);
+    background-color: var(--background-tertiary);
+    border-radius: 10px;
+}
+
+.workflow-item-enumerator {
+    position: relative;
+    display: flex;
+    justify-content: end;
+}
+
+.workflow-item-enumerator h5 {
+    top: -22px;
+    right: -20px;
+    position: absolute;
+    background-color: var(--background-primary);
+    padding: 1rem 1.1rem;
+    border-radius: 20px;
+    border-left: 1px solid var(--button-secondary-border);
+    border-bottom: 1px solid var(--button-secondary-border);
+}
