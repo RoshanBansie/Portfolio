@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/navbar/NavBar";
+import Footer from "@/components/layout/footer/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,6 +25,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

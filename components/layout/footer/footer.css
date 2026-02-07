@@ -1,0 +1,63 @@
+@import "@/app/globals.css";
+
+footer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5rem 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: top;
+}
+
+.footer-left {
+    min-width: 20rem;
+}
+
+.footer-right {
+    display: flex;
+    align-items: top;
+    gap: 5rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    color: var(--text-tertiary);
+    margin: 1rem 0;
+}
+
+.socials-container {
+    margin: 1rem 0;
+    /* Compensate for the left-padding of the first social icon */
+    margin-left: -0.5rem; 
+}
+
+.social-icon {
+    font-size: 20px;
+    padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.social-icon:hover {
+    background-color: var(--button-secondary-hover);
+    transition: 0.3s ease-in;
+}
+
+.project-list li {
+    display: flex;
+    align-items: top;
+}
+
+.arrow-link {
+    position: relative;
+}
+
+.arrow-topright {
+    font-size: 12px;
+    position: absolute;
+}

@@ -128,7 +128,7 @@ export default function Education() {
     }
 
     return (
-        <section className="education-section">
+        <section className="education-section" id="education">
             <div className="education-section-header">
                 <h2>Educational milestones I've achieved</h2>
                 <p>

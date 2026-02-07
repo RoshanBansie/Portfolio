@@ -144,7 +144,7 @@ export default function Skills() {
     }
 
     return (
-        <section className="skills">
+        <section className="skills" id="techstack">
             <div className="skills-section-header">
                 <h2>Skills I have learned along the way</h2>
                 <p>

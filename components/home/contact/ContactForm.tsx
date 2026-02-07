@@ -94,7 +94,7 @@ export default function ContactForm() {
     }
 
     return (
-        <section className="contact-container">
+        <section className="contact-container" id="contact">
             <div className="contact-section-header">
                 <h2>Lets get in touch</h2>
                 <p>
