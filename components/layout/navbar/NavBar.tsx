@@ -29,22 +29,25 @@ export default function Navbar() {
                         >
                             <ToggleLink path="/">Home</ToggleLink>
                             <ToggleLink path="/projects">Projects</ToggleLink>
-                            <ToggleLink path="/about">About</ToggleLink>
-                            <ToggleLink path="/contact">
+                            <ToggleLink path="#techstack">Techstack</ToggleLink>
+                            <ToggleLink path="#about-me">About me</ToggleLink>
+                            <ToggleLink path="#education">Education</ToggleLink>
+                            <ToggleLink path="#contact">
                                 <button className="primary-button">Contact</button> 
                             </ToggleLink>
                         </motion.ul>
                     </div>
                     <nav className="nav-menu">
                         <ul>
-                            <Link className="navlink" href="/about">About me</Link>
                             <Link className="navlink" href="/projects">Projects</Link>
-                            <Link className="navlink" href="/">Education</Link>
+                            <Link className="navlink" href="#techstack">Techstack</Link>
+                            <Link className="navlink" href="#about-me">About me</Link>
+                            <Link className="navlink" href="#education">Education</Link>
                         </ul>
                     </nav>
                     <div className="nav-btns">
                         <button className="primary-button">
-                            <Link className="navbtn-links" href="contact">Contact</Link>
+                            <Link className="navbtn-links" href="#contact">Contact</Link>
                         </button>
                     </div>
                     <div className="toggle-menu-btn" onClick={handleToggle}>
