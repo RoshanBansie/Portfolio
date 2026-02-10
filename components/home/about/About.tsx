@@ -96,7 +96,7 @@ export default function About() {
                     {workflowSteps.map((step, i) => {
                         const { headline, explanation } = step
                         return (
-                            <li>
+                            <li key={"headline-"+ i}>
                                 <div className="workflow-item-enumerator">
                                     <h5>{i+1}</h5>
                                 </div>

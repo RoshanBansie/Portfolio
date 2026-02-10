@@ -5,9 +5,7 @@
 }
 
 .projects-section-header {
-    text-align: center;
     max-width: 40%;
-    margin: 0 auto;
 }
 
 .projects-container {
@@ -19,6 +17,12 @@
 
 .project-card {
     width: 40rem;
+    border-radius: 20px;
+}
+
+.project-card-image {
+    border: 1px solid var(--button-secondary-border);
+    border-radius: 16px;
 }
 
 .project-header {
@@ -46,11 +50,6 @@
     background-color: transparent;
     border-radius: 1rem;
     width: fit-content;
-}
-
-.project-card-image {
-    border-radius: 1rem;
-    border: 1px solid var(--button-secondary-border);
 }
 
 .project-card button {
