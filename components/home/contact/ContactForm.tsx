@@ -2,19 +2,30 @@
 
 import React from "react"
 import "./contact.css"
-import Link from "next/link"
-import { MdOutlineArrowOutward } from "react-icons/md"
+
+// Icons
 import { AiOutlineExclamationCircle } from "react-icons/ai"
-import type { ContactFormData } from "@/app/types"
 import { FaCheck } from "react-icons/fa6"
-import sendMail from "@/utils/sendMail"
+import { TbMail } from "react-icons/tb"
+import { IoLocationOutline } from "react-icons/io5"
+import { FiGithub } from "react-icons/fi"
+import { FaLinkedinIn } from "react-icons/fa"
+
+// Components
 import Spinner from "@/components/widgets/spinner/Spinner"
+import Link from "next/link"
+
+// Utils
+import sendMail from "@/utils/sendMail"
 import { 
     validateName,
     validateEmail,
     validateSubject,
     validateMessage
- } from "../../../utils/FormValidation"
+} from "../../../utils/FormValidation"
+
+// Types
+import type { ContactFormData } from "@/app/types"
 
 export default function ContactForm() {
     const [formData, setFormData] = React.useState<ContactFormData>({
@@ -102,12 +113,31 @@ export default function ContactForm() {
                     Also, feel free to connect with me via LinkedIn to track my progression
                     and milestones in webdevelopment.
                 </p>
-                <button className="secondary-button">
-                    <Link href="www.linkedin.com/in/roshan-bansie-94a825301" target="_blank">
-                        LinkedIn
-                        <MdOutlineArrowOutward />
+                <ul className="contact-cards">
+                    <li className="contact-card">
+                        <TbMail className="icon" />
+                        <div className="contact-card-description">
+                            <h4>Email</h4>
+                            <h5>roshan_b@outlook.com</h5>
+                        </div>
+                    </li>
+                    <li className="contact-card">
+                        <IoLocationOutline className="icon" />
+                        <div className="contact-card-description">
+                            <h4>Location</h4>
+                            <h5>Amsterdam area, The Netherlands</h5>
+                        </div>
+                    </li>
+                </ul>
+                <h5>Connect with me</h5>
+                <div className="social-icons-container">
+                    <Link href="https://github.com/RoshanBansie" target="_blank" className="social-icon">
+                        <FiGithub />
                     </Link>
-                </button>
+                    <Link href="https://linkedin.com/in/roshan-bansie-94a825301" target="_blank" className="social-icon">
+                        <FaLinkedinIn />
+                    </Link>
+                </div>
             </div>
             <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="credentials-container">

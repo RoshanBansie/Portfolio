@@ -105,7 +105,7 @@ export default function Education() {
                     className="institute-logo"
                 />
                 <div className="milestone-content">
-                    <h3>{institute}</h3>
+                    <h4>{institute}</h4>
                     <div className={milestones.length > 1 ? "milestone-group" : ""}>
                         {milestones.map((milestone, i) => {
                             const {type, start, end, skills} = milestone

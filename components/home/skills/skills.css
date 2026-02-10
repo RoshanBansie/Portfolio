@@ -46,5 +46,6 @@
     width: 15rem;
     padding: 1rem;
     border: 1px solid var(--button-secondary-border);
+    background-color: var(--background-tertiary);
     border-radius: 10px;
 }

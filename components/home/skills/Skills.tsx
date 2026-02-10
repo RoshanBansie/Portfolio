@@ -60,9 +60,9 @@ export default function Skills() {
             area: "frontend",
             skill: "nextjs",
             logo: {
-                src: "/assets/nextjs_logo.jpg",
-                initHeight: 400,
-                initWidth: 400
+                src: "/assets/nextjs_logo.png",
+                initHeight: 320,
+                initWidth: 320
             }
         },
         {

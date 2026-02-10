@@ -5,13 +5,13 @@
     position: relative;
     display: grid;
     grid-template-columns: 0.75fr 1fr;
-    height: 50vh;
+    height: 30vh;
 }
 
 .philosophy-section-header {
     position: sticky;
     top: 0;
-    height: 50vh;
+    height: 30vh;
     display: flex;
     align-items: center;
 }
@@ -29,7 +29,7 @@
 }
 
 .headlines-container li {
-    height: 50vh;
+    height: 30vh;
     scroll-snap-align: center;
     display: flex;
     flex-direction: column;
