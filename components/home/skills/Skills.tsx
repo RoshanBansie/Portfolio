@@ -125,7 +125,7 @@ export default function Skills() {
     // along with its logo.
     function getSkillCard({skill, logo}: SkillsObj): JSX.Element {
         return (
-            <div className="skill-card" key={skill}>
+            <div className="skill-card">
                 {logo ? (
                     <ImageUI
                         src={logo.src}
@@ -168,12 +168,12 @@ export default function Skills() {
                 ))}
             </div>
             <div className="skills-content">
-                {skills.map(skill => {
+                {skills.map((skill, i) => {
                     const area: string = skill.area.toLowerCase()
                     const currentView: string = view.toLocaleLowerCase()
 
                    return area === currentView || currentView === "all" ? (
-                    <div>
+                    <div key={"skill-" + i}>
                         {getSkillCard(skill)}
                     </div>
                    ) : null
