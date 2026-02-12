@@ -1,3 +1,6 @@
+"use client"
+
+import React from "react"
 import Link from "next/link"
 import ImageUI from "@/components/widgets/imageui/ImageUI"
 import "./projects.css"
@@ -35,7 +38,16 @@ export default function Projects() {
                     height="25rem"
                     width="100%"
                     alt={alt}
-                    className="project-card-image"
+                    className="project-card-image-desktop"
+                />
+                <ImageUI
+                    src={src}
+                    originalWidth={width}
+                    originalHeight={height}
+                    height="15rem"
+                    width="100%"
+                    alt={alt}
+                    className="project-card-image-mobile"
                 />
                 <div className="project-description">
                     <div className="project-tags-container">

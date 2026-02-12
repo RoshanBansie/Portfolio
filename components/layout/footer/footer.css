@@ -1,6 +1,7 @@
 @import "@/app/globals.css";
 
 footer {
+    max-width: 1800px;
     width: 80%;
     margin: 0 auto;
     padding: 5rem 0;
@@ -60,4 +61,10 @@ footer li {
 .arrow-topright {
     font-size: 12px;
     position: absolute;
+}
+
+@media (max-width: 430px) {
+    .footer-right {
+        flex-direction: row-reverse;
+    }
 }
