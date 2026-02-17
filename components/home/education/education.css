@@ -2,9 +2,8 @@
 
 .education-section {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap ;
 }
 
 .education-section-header h2 {
@@ -31,7 +30,8 @@
 }
 
 .milestone-subcontainer li {
-    color: var(--text-tertiary);
+    color: var(--text-primary);
+    margin: 1rem 0;
 }
 
 .milestone-group {
@@ -54,6 +54,12 @@
 
 .milestone-period {
     font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .education-section {
+        display: block;
+    }
 }
 
 @media (max-width: 600px) {
