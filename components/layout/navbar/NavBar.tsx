@@ -1,12 +1,12 @@
 "use client"
 
 import React from "react"
-import Link from "next/link"
 import { motion } from "motion/react"
+import Link from "next/link"
 import ToggleLink from "./ToggleLink"
-import "./navbar.css"
 import Menu from "@/components/widgets/menu/Menu"
 import Switch from "@/components/widgets/switch/Switch"
+import "./navbar.css"
 
 export default function Navbar() {
 
