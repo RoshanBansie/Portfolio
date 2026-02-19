@@ -20,7 +20,7 @@
     border-radius: 20px;
 }
 
-.project-card-image {
+.project-card-image-desktop, .project-card-image-mobile {
     border: 1px solid var(--button-secondary-border);
     border-radius: 16px;
 }
@@ -28,13 +28,6 @@
 .project-header {
     border-radius: 3rem;
     border: 1px solid var(--button-secondary-border);
-}
-
-.arrow-container {
-    background-color: var(--background-primary);
-    color: var(--text-primary);
-    padding: 1rem;
-    border-radius: 1rem;
 }
 
 .project-tags-container {
@@ -54,4 +47,26 @@
 
 .project-card button {
     margin: 1rem 0;
+}
+
+.project-card-image-mobile {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .projects-section-header {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .project-card-image-desktop {
+        display: none;
+    }
+    .project-card-image-mobile {
+        display: flex;
+    }
+    .project-card {
+        width: 24rem;
+    }
 }

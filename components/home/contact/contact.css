@@ -1,14 +1,27 @@
 @import "@/app/globals.css";
 
-.contact-container {
-    margin: 10rem auto;
+.contact-content {
     display: flex;
+    justify-content: center;
     align-items: top;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 5rem auto;
+}
+
+.contact-content ul {
+    padding: 0;
+    list-style: none;
+}
+
+.contact-content li {
+    margin-bottom: 2rem;
 }
 
 .contact-section-header {
-    max-width: 40%;
+    max-width: 70%;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .contact-section-header button {
@@ -95,15 +108,29 @@ input:focus, textarea:focus {
 }
 
 .icon {
-    font-size: 40px;
-    border-radius: 10px;
-    background-color: var(--background-tertiary);
-    border: 1px solid var(--button-secondary-border);
-    padding: 0.25rem;
+    font-size: 25px;
 }
 
-.social-icons-container {
+.social-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
     margin: 1rem 0;
+}
+
+@media (max-width: 430px) {
+    .contact-form {
+        width: 100%;
+    }
+    .credentials-container, .credentials-container label {
+        display: block;
+    }
+    .credentials-container input {
+        width: 100%;
+    }
+    .contact-section-header {
+        max-width: 90%;
+    }
 }
 
 

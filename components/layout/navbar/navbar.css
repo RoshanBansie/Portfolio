@@ -73,7 +73,7 @@ header {
     list-style: none;
 }
 
-@media (max-width: 670px) {
+@media (max-width: 770px) {
     .toggle-menu, .toggle-menu-btn {
         display: block;
     }

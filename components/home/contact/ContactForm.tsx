@@ -6,10 +6,6 @@ import "./contact.css"
 // Icons
 import { AiOutlineExclamationCircle } from "react-icons/ai"
 import { FaCheck } from "react-icons/fa6"
-import { TbMail } from "react-icons/tb"
-import { IoLocationOutline } from "react-icons/io5"
-import { FiGithub } from "react-icons/fi"
-import { FaLinkedinIn } from "react-icons/fa"
 
 // Components
 import Spinner from "@/components/widgets/spinner/Spinner"
@@ -105,58 +101,24 @@ export default function ContactForm() {
     }
 
     return (
-        <section className="contact-container" id="contact">
-            <div className="contact-section-header">
-                <h2>Lets get in touch</h2>
-                <p>
-                    Use the contact form to the right for further inquiries.
-                    Also, feel free to connect with me via LinkedIn to track my progression
-                    and milestones in webdevelopment.
-                </p>
-                <ul className="contact-cards">
-                    <li className="contact-card">
-                        <TbMail className="icon" />
-                        <div className="contact-card-description">
-                            <h4>Email</h4>
-                            <h5>roshan_b@outlook.com</h5>
-                        </div>
-                    </li>
-                    <li className="contact-card">
-                        <IoLocationOutline className="icon" />
-                        <div className="contact-card-description">
-                            <h4>Location</h4>
-                            <h5>Amsterdam area, The Netherlands</h5>
-                        </div>
-                    </li>
-                </ul>
-                <h5>Connect with me</h5>
-                <div className="social-icons-container">
-                    <Link href="https://github.com/RoshanBansie" target="_blank" className="social-icon">
-                        <FiGithub />
-                    </Link>
-                    <Link href="https://linkedin.com/in/roshan-bansie-94a825301" target="_blank" className="social-icon">
-                        <FaLinkedinIn />
-                    </Link>
+        <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="credentials-container">
+                <div>
+                    <label htmlFor="full-name">Full Name</label>
+                    <input
+                        required
+                        type="text"
+                        name="fullName"
+                        id="full-name"
+                        placeholder="John Doe"
+                        autoComplete="name"
+                        aria-label="Full name"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                    />
                 </div>
-            </div>
-            <form className="contact-form" onSubmit={handleSubmit}>
-                <div className="credentials-container">
-                    <label>
-                        Full name
-                        <input
-                            required
-                            type="text"
-                            name="fullName"
-                            id="full-name"
-                            placeholder="John Doe"
-                            autoComplete="name"
-                            aria-label="Full name"
-                            value={formData.fullName}
-                            onChange={handleChange}
-                        />
-                    </label>
-                    <label>
-                        Email
+                <div>
+                    <label htmlFor="email">Email</label>
                         <input
                             required
                             type="email"
@@ -168,48 +130,47 @@ export default function ContactForm() {
                             value={formData.email}
                             onChange={handleChange}
                         />
-                    </label>
                 </div>
-                <label htmlFor="subject">Subject</label>
-                <input
-                    required
-                    type="text"
-                    name="subject"
-                    id="subject"
-                    placeholder="Subject of your message"
-                    aria-label="Subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                />
-                <label htmlFor="message">Message</label>
-                <textarea
-                    required
-                    name="message"
-                    id="message"
-                    placeholder="Type your message here"
-                    aria-label="Your message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    minLength={50}
-                    maxLength={2000}
-                />
-                <input
-                    name="company"
-                    id="company"
-                />
-                <button type="submit" className="primary-button">
-                    {isSubmitted && !submitSucces ? <Spinner /> : null}
-                    {submitSucces ? <FaCheck /> : null}
-                    {!isSubmitted && !submitSucces ? "Send" : null}
-                </button>
-                {error ? (
-                        <div className="error-container">
-                            <AiOutlineExclamationCircle className="error-icon" />
-                            <h5>{error}</h5>
-                        </div>
-                    ) : null
-                }
-            </form>
-        </section>
+            </div>
+            <label htmlFor="subject">Subject</label>
+            <input
+                required
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="Subject of your message"
+                aria-label="Subject"
+                value={formData.subject}
+                onChange={handleChange}
+            />
+            <label htmlFor="message">Message</label>
+            <textarea
+                required
+                name="message"
+                id="message"
+                placeholder="Type your message here"
+                aria-label="Your message"
+                value={formData.message}
+                onChange={handleChange}
+                minLength={50}
+                maxLength={2000}
+            />
+            <input
+                name="company"
+                id="company"
+            />
+            <button type="submit" className="primary-button">
+                {isSubmitted && !submitSucces ? <Spinner /> : null}
+                {submitSucces ? <FaCheck /> : null}
+                {!isSubmitted && !submitSucces ? "Send" : null}
+            </button>
+            {error ? (
+                    <div className="error-container">
+                        <AiOutlineExclamationCircle className="error-icon" />
+                        <h5>{error}</h5>
+                    </div>
+                ) : null
+            }
+        </form>
     )
 }
