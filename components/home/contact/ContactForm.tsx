@@ -6,8 +6,6 @@ import "./contact.css"
 // Icons
 import { AiOutlineExclamationCircle } from "react-icons/ai"
 import { FaCheck } from "react-icons/fa6"
-import { TbMail } from "react-icons/tb"
-import { IoLocationOutline } from "react-icons/io5"
 
 // Components
 import Spinner from "@/components/widgets/spinner/Spinner"
@@ -105,8 +103,8 @@ export default function ContactForm() {
     return (
         <form className="contact-form" onSubmit={handleSubmit}>
             <div className="credentials-container">
-                <label>
-                    Full name
+                <div>
+                    <label htmlFor="full-name">Full Name</label>
                     <input
                         required
                         type="text"
@@ -118,21 +116,21 @@ export default function ContactForm() {
                         value={formData.fullName}
                         onChange={handleChange}
                     />
-                </label>
-                <label>
-                    Email
-                    <input
-                        required
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="example@mail.com"
-                        autoComplete="email"
-                        aria-label="Email"
-                        value={formData.email}
-                        onChange={handleChange}
-                    />
-                </label>
+                </div>
+                <div>
+                    <label htmlFor="email">Email</label>
+                        <input
+                            required
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="example@mail.com"
+                            autoComplete="email"
+                            aria-label="Email"
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
+                </div>
             </div>
             <label htmlFor="subject">Subject</label>
             <input

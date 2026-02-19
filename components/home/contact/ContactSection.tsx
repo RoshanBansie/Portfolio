@@ -38,13 +38,9 @@ export default function ContactSection() {
                             <Link href="https://github.com/RoshanBansie" target="_blank" className="icon">
                                 <FiGithub />
                             </Link>
-                            <h5>Github</h5>
-                        </div>
-                        <div className="social-container">
                             <Link href="https://linkedin.com/in/roshan-bansie-94a825301" target="_blank" className="icon">
                                 <FaLinkedinIn />
                             </Link>
-                            <h5>Linkedin</h5>
                         </div>
                     </li>
                 </ul>
