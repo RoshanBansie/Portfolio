@@ -6,6 +6,7 @@ import { motion } from "motion/react"
 import ToggleLink from "./ToggleLink"
 import "./navbar.css"
 import Menu from "@/components/widgets/menu/Menu"
+import Switch from "@/components/widgets/switch/Switch"
 
 export default function Navbar() {
 
@@ -32,9 +33,8 @@ export default function Navbar() {
                             <ToggleLink path="#techstack" toggleMenu={handleToggle}>Techstack</ToggleLink>
                             <ToggleLink path="#about-me" toggleMenu={handleToggle}>About me</ToggleLink>
                             <ToggleLink path="#education" toggleMenu={handleToggle}>Education</ToggleLink>
-                            <ToggleLink path="#contact" toggleMenu={handleToggle}>
-                                <button className="primary-button">Contact</button> 
-                            </ToggleLink>
+                            <ToggleLink path="#contact" toggleMenu={handleToggle}>Contact</ToggleLink>
+                            <Switch />
                         </motion.ul>
                     </div>
                     <nav className="nav-menu">

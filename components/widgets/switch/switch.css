@@ -1,0 +1,16 @@
+@import "@/app/globals.css";
+
+.switch-container {
+    position: relative;
+    border: 1px solid var(--text-tertiary);
+    padding: 8px 24px;
+    border-radius: 2rem;
+}
+
+.switch-slider {
+    content: "";
+    padding: 5px 8px;
+    border-radius: 20px;
+    background-color: var(--text-primary);
+    color: var(--text-secondary);
+}
