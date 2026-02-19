@@ -1,18 +1,12 @@
-import React from "react"
+import { ToggleMenuProps } from "@/app/types"
 import "./menu.css"
 
-export default function Menu() {
-
-    const [open, setOpen] = React.useState<boolean>(false)
-    
-    function handleToggle(): void {
-        setOpen(prev => !prev)
-    }
+export default function Menu({open, handleToggle}: ToggleMenuProps) {
 
     return (
         <div 
             className="menu-btn-container"
-            onClick={handleToggle}
+            onClick={() => handleToggle}
         >
             <div 
                 className="menu-upper" 

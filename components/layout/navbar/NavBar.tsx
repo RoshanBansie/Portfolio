@@ -3,9 +3,9 @@
 import React from "react"
 import Link from "next/link"
 import { motion } from "motion/react"
-import Menu from "@/components/widgets/menu/menu"
 import ToggleLink from "./ToggleLink"
 import "./navbar.css"
+import Menu from "@/components/widgets/menu/Menu"
 
 export default function Navbar() {
 
@@ -27,12 +27,12 @@ export default function Navbar() {
                             transition={{duration: 0.5, ease: "easeInOut"}}
                             style={{overflow: "hidden"}}
                         >
-                            <ToggleLink path="/">Home</ToggleLink>
-                            <ToggleLink path="/projects">Projects</ToggleLink>
-                            <ToggleLink path="#techstack">Techstack</ToggleLink>
-                            <ToggleLink path="#about-me">About me</ToggleLink>
-                            <ToggleLink path="#education">Education</ToggleLink>
-                            <ToggleLink path="#contact">
+                            <ToggleLink path="/" toggleMenu={handleToggle}>Home</ToggleLink>
+                            <ToggleLink path="/projects" toggleMenu={handleToggle}>Projects</ToggleLink>
+                            <ToggleLink path="#techstack" toggleMenu={handleToggle}>Techstack</ToggleLink>
+                            <ToggleLink path="#about-me" toggleMenu={handleToggle}>About me</ToggleLink>
+                            <ToggleLink path="#education" toggleMenu={handleToggle}>Education</ToggleLink>
+                            <ToggleLink path="#contact" toggleMenu={handleToggle}>
                                 <button className="primary-button">Contact</button> 
                             </ToggleLink>
                         </motion.ul>
@@ -51,7 +51,7 @@ export default function Navbar() {
                         </button>
                     </div>
                     <div className="toggle-menu-btn" onClick={handleToggle}>
-                        <Menu />
+                        <Menu open={open} handleToggle={handleToggle} />
                     </div>
                 </div>
             </div>
