@@ -37,6 +37,7 @@ export type ProjectCard = {
 
 export type NavLinkProps = {
     path: string,
+    toggleMenu: () => void,
     children: React.ReactNode
 }
 
@@ -75,3 +76,9 @@ export type WorkflowStep = {
     headline: string,
     explanation: string
 }
+
+export type ToggleMenuProps = {
+    open: boolean,
+    handleToggle: () => void
+}
+

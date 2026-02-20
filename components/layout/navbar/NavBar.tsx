@@ -1,10 +1,11 @@
 "use client"
 
 import React from "react"
-import Link from "next/link"
 import { motion } from "motion/react"
-import Menu from "@/components/widgets/menu/menu"
+import Link from "next/link"
 import ToggleLink from "./ToggleLink"
+import Menu from "@/components/widgets/menu/Menu"
+import Switch from "@/components/widgets/switch/Switch"
 import "./navbar.css"
 
 export default function Navbar() {
@@ -27,14 +28,13 @@ export default function Navbar() {
                             transition={{duration: 0.5, ease: "easeInOut"}}
                             style={{overflow: "hidden"}}
                         >
-                            <ToggleLink path="/">Home</ToggleLink>
-                            <ToggleLink path="/projects">Projects</ToggleLink>
-                            <ToggleLink path="#techstack">Techstack</ToggleLink>
-                            <ToggleLink path="#about-me">About me</ToggleLink>
-                            <ToggleLink path="#education">Education</ToggleLink>
-                            <ToggleLink path="#contact">
-                                <button className="primary-button">Contact</button> 
-                            </ToggleLink>
+                            <ToggleLink path="/" toggleMenu={handleToggle}>Home</ToggleLink>
+                            <ToggleLink path="/projects" toggleMenu={handleToggle}>Projects</ToggleLink>
+                            <ToggleLink path="#techstack" toggleMenu={handleToggle}>Techstack</ToggleLink>
+                            <ToggleLink path="#about-me" toggleMenu={handleToggle}>About me</ToggleLink>
+                            <ToggleLink path="#education" toggleMenu={handleToggle}>Education</ToggleLink>
+                            <ToggleLink path="#contact" toggleMenu={handleToggle}>Contact</ToggleLink>
+                            <Switch />
                         </motion.ul>
                     </div>
                     <nav className="nav-menu">
@@ -46,12 +46,13 @@ export default function Navbar() {
                         </ul>
                     </nav>
                     <div className="nav-btns">
+                        <Switch />
                         <button className="primary-button">
                             <Link className="navbtn-links" href="#contact">Contact</Link>
                         </button>
                     </div>
                     <div className="toggle-menu-btn" onClick={handleToggle}>
-                        <Menu />
+                        <Menu open={open} handleToggle={handleToggle} />
                     </div>
                 </div>
             </div>
