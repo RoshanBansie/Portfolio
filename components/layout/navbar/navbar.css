@@ -31,7 +31,7 @@ header {
     justify-content: center;
     align-items: center;
     list-style: none;
-    margin-left: -3rem;
+    margin-left: 2.25rem;
 }
 
 .logo {
@@ -51,6 +51,12 @@ header {
 
 .navbtn-links {
     font-weight: bold;
+}
+
+.nav-btns {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* Represents the open state of the mobile nav. */

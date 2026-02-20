@@ -35,10 +35,16 @@ export default function ContactSection() {
                         <h4>Connect with me</h4>
                         <p>Follow my progression as a webdeveloper</p>
                         <div className="social-container">
-                            <Link href="https://github.com/RoshanBansie" target="_blank" className="icon">
+                            <Link 
+                                href="https://github.com/RoshanBansie" target="_blank"
+                                style={{fontSize: "20px"}}
+                            >
                                 <FiGithub />
                             </Link>
-                            <Link href="https://linkedin.com/in/roshan-bansie-94a825301" target="_blank" className="icon">
+                            <Link 
+                                href="https://linkedin.com/in/roshan-bansie-94a825301" target="_blank"
+                                style={{fontSize: "20px"}}
+                            >
                                 <FaLinkedinIn />
                             </Link>
                         </div>

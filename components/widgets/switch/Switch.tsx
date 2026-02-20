@@ -21,7 +21,7 @@ export default function Switch() {
             className="switch-container"
             onClick={() => handleToggle()}
             aria-label="toggle light-mode"
-            style={{backgroundColor: theme === "light" ? "#696969" : "transparent"}}
+            style={{backgroundColor: theme === "light" ? "#efefef" : "transparent"}}
         >
             <div 
                 className="switch-slider"

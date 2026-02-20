@@ -2,7 +2,7 @@
 
 .switch-container {
     position: relative;
-    border: 1px solid var(--text-tertiary);
+    border: 1px solid var(--button-secondary-border);
     padding: 8px 24px;
     border-radius: 2rem;
 }
@@ -10,7 +10,7 @@
 .switch-slider {
     content: "";
     padding: 5px 8px;
-    border-radius: 20px;
+    border-radius: 32px;
     background-color: var(--text-primary);
     color: var(--text-secondary);
 }

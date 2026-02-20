@@ -46,6 +46,7 @@ export default function Navbar() {
                         </ul>
                     </nav>
                     <div className="nav-btns">
+                        <Switch />
                         <button className="primary-button">
                             <Link className="navbtn-links" href="#contact">Contact</Link>
                         </button>
