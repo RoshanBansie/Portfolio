@@ -1,0 +1,46 @@
+@import "@/app/globals.css";
+
+.project-page {
+    width: 50%;
+}
+
+.project-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem auto;
+}
+
+.description {
+    width: 40%;
+}
+
+.project-page-img {
+    border: 1px solid var(--button-secondary-border);
+    border-radius: 16px;
+    margin: 2rem auto;
+}
+
+.project-action-btns {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.backlink {
+    color: var(--text-tertiary);
+}
+
+.left-arrow {
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.project-par {
+    margin: 3rem auto;
+}
+
+.project-par h3 {
+    text-transform: capitalize;
+    margin: 1rem 0;
+}

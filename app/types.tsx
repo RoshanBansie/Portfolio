@@ -22,7 +22,8 @@ export type MilestonesObj = {
     }[]
 }
 
-export type ProjectCard = {
+export type Project = {
+    id: number,
     title: string,
     description: string,
     tags: string[],
@@ -32,7 +33,8 @@ export type ProjectCard = {
         height: number,
         alt: string,
     },
-    link: string
+    link: string,
+    content: {title: string, text: string}[]
 }
 
 export type NavLinkProps = {
@@ -80,5 +82,16 @@ export type WorkflowStep = {
 export type ToggleMenuProps = {
     open: boolean,
     handleToggle: () => void
+}
+
+export type DownloadBtnProps = {
+    innerText: string,
+    src: string,
+    style: "primary" | "secondary"
+}
+
+export type ArrowLinkProps = {
+    innerText: string,
+    dst: string
 }
 

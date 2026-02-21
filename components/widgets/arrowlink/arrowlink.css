@@ -1,0 +1,10 @@
+@import "@/app/globals.css";
+
+.arrow-link {
+    position: relative;
+}
+
+.arrow-topright {
+    font-size: 12px;
+    position: absolute;
+}

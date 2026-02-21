@@ -21,7 +21,7 @@ export default function Navbar() {
             <div className="nav-container">
                 <div className="nav-inner">
                     <div>
-                        <Link href="." className="logo">Roshan Bansie</Link>
+                        <Link href="/" className="logo">Roshan Bansie</Link>
                         <motion.ul
                             className="toggle-menu"
                             animate={{height: open ? "100vh" : "0"}}
