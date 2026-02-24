@@ -11,3 +11,9 @@
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 820px) {
+    .projects-page-header {
+        width: 60%;
+    }
+}
