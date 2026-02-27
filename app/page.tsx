@@ -5,11 +5,14 @@ import ContactSection from "@/components/home/contact/ContactSection";
 import Skills from "@/components/home/skills/Skills";
 import About from "@/components/home/about/About";
 
+// Data
+import projects from "@/data/projects";
+
 export default function Home() {
   return (
       <main>
         <Hero />
-        <Projects />
+        <Projects projects={projects} />
         <Skills />
         <About />
         <Education />
