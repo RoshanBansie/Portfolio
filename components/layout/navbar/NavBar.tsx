@@ -30,25 +30,25 @@ export default function Navbar() {
                         >
                             <ToggleLink path="/" toggleMenu={handleToggle}>Home</ToggleLink>
                             <ToggleLink path="/projects" toggleMenu={handleToggle}>Projects</ToggleLink>
-                            <ToggleLink path="#techstack" toggleMenu={handleToggle}>Techstack</ToggleLink>
-                            <ToggleLink path="#about-me" toggleMenu={handleToggle}>About me</ToggleLink>
-                            <ToggleLink path="#education" toggleMenu={handleToggle}>Education</ToggleLink>
-                            <ToggleLink path="#contact" toggleMenu={handleToggle}>Contact</ToggleLink>
+                            <ToggleLink path="/#techstack" toggleMenu={handleToggle}>Techstack</ToggleLink>
+                            <ToggleLink path="/#about-me" toggleMenu={handleToggle}>About me</ToggleLink>
+                            <ToggleLink path="/#education" toggleMenu={handleToggle}>Education</ToggleLink>
+                            <ToggleLink path="/#contact" toggleMenu={handleToggle}>Contact</ToggleLink>
                             <Switch />
                         </motion.ul>
                     </div>
                     <nav className="nav-menu">
                         <ul>
                             <Link className="navlink" href="/projects">Projects</Link>
-                            <Link className="navlink" href="#techstack">Techstack</Link>
-                            <Link className="navlink" href="#about-me">About me</Link>
-                            <Link className="navlink" href="#education">Education</Link>
+                            <Link className="navlink" href="/#techstack">Techstack</Link>
+                            <Link className="navlink" href="/#about-me">About me</Link>
+                            <Link className="navlink" href="/#education">Education</Link>
                         </ul>
                     </nav>
                     <div className="nav-btns">
                         <Switch />
                         <button className="primary-button">
-                            <Link className="navbtn-links" href="#contact">Contact</Link>
+                            <Link className="navbtn-links" href="/#contact">Contact</Link>
                         </button>
                     </div>
                     <div className="toggle-menu-btn" onClick={handleToggle}>

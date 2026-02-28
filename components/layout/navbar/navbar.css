@@ -53,6 +53,10 @@ header {
     font-weight: bold;
 }
 
+.navbtn-links:hover {
+    color: var(--text-secondary);
+}
+
 .nav-btns {
     display: flex;
     align-items: center;
