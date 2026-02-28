@@ -31,7 +31,13 @@ export default function ContactSection() {
                     and milestones in webdevelopment.
                 </p>
             </motion.div>
-            <div className="contact-content">
+            <motion.div 
+                className="contact-content"
+                initial={{opacity: 0, y: 40}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{duration: 0.5, delay: 1}}
+                viewport={{once: true}}
+            >
                 <ContactForm />
                 <ul className="contact-socials">
                     <li>
@@ -61,7 +67,7 @@ export default function ContactSection() {
                         </div>
                     </li>
                 </ul>
-            </div>
+            </motion.div>
         </section>
     )
 }
