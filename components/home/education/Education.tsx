@@ -1,7 +1,10 @@
+"use client"
+
 import { JSX } from "react"
-import "./education.css"
+import { motion } from "motion/react"
 import ImageUI from "@/components/widgets/imageui/ImageUI"
 import type { MilestonesObj } from "@/app/types"
+import "./education.css"
 
 // Component that displays the education section on the homepage.
 // Creates a timeline of my educational milestones given by an array of objects
@@ -129,16 +132,28 @@ export default function Education() {
 
     return (
         <section className="education-section" id="education">
-            <div className="education-section-header">
+            <motion.div 
+                className="education-section-header"
+                initial={{opacity: 0, x: -40}}
+                whileInView={{opacity: 1, x: 0}}
+                transition={{duration: 0.5, delay: 0.5}}
+                viewport={{once: true}}
+            >
                 <h2>Educational milestones I've achieved</h2>
                 <p>
-                    Below are the scholar institutes that I have attended and online courses
+                    To the right are the scholar institutes that I have attended and online courses
                     that I've completed so far.
                 </p>
-            </div>
-            <div className="education-content">
+            </motion.div>
+            <motion.div 
+                className="education-content"
+                initial={{opacity: 0, x: 40}}
+                whileInView={{opacity: 1, x: 0}}
+                transition={{duration: 0.5, delay: 0.5}}
+                viewport={{once: true}}
+            >
                {education.map((milestoneBlock, i) => getMilestoneBlock(milestoneBlock, i))}
-            </div>
+            </motion.div>
         </section>
     )
 }
