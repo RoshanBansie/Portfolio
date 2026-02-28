@@ -1,5 +1,8 @@
+"use client"
+
 import "./about.css"
 import type { PhilosophyPoint, WorkflowStep } from "@/app/types"
+import { motion } from "motion/react"
 
 export default function About() {
 
@@ -66,23 +69,41 @@ export default function About() {
     return (
         <section className="about" id="about-me">
             <div className="philosophy-container">
-                <div className="philosophy-section-header">
+                <motion.div 
+                    className="philosophy-section-header"
+                    initial={{opacity: 0, y: 40}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: 0.5, delay: 0.5}}
+                    viewport={{once: true}}
+                >
                     <h2>My development philosophy</h2>
-                </div>
+                </motion.div>
                 <ul className="headlines-container">
                     {philosophyPoints.map(item => {
                         const { headline, explanation } = item
                         return (
-                            <li key={headline}>
+                            <motion.li 
+                                key={headline}
+                                initial={{opacity: 0, y: 40}}
+                                whileInView={{opacity: 1, y: 0}}
+                                transition={{duration: 0.5, delay: 0.5}}
+                                viewport={{once: true}}
+                            >
                                 <h3>{headline}</h3>
                                 <p>{explanation}</p>
-                            </li>
+                            </motion.li>
                         )
                     })}
                 </ul>
             </div>  
             <div className="workflow-container">
-                <div className="workflow-section-header">
+                <motion.div 
+                    className="workflow-section-header"
+                    initial={{opacity: 0, y: 40}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: 0.5, delay: 0.5}}
+                    viewport={{once: true}}
+                >
                     <h2>My workflow</h2>
                     <p>
                         It is tempting to head straight to your favorite IDE when being given
@@ -91,18 +112,24 @@ export default function About() {
                         a longer development time due to impulsive changes over time. Instead,
                         I have developed the workflow as described below.
                     </p>
-                </div>
+                </motion.div>
                 <ul className="workflow-list">
                     {workflowSteps.map((step, i) => {
                         const { headline, explanation } = step
                         return (
-                            <li key={"headline-"+ i}>
+                            <motion.li 
+                                key={"headline-"+ i}
+                                initial={{opacity: 0, y: 40}}
+                                whileInView={{opacity: 1, y: 0}}
+                                transition={{duration: 0.5, delay: i*0.2}}
+                                viewport={{once: true}}
+                            >
                                 <div className="workflow-item-enumerator">
                                     <h5>{i+1}</h5>
                                 </div>
                                 <h4>{headline}</h4>
                                 <p>{explanation}</p>
-                            </li>
+                            </motion.li>
                         )
                     })}
                 </ul>

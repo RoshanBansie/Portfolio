@@ -4,6 +4,7 @@ import React from "react"
 import { FaCode } from "react-icons/fa6"
 import type { SkillsObj } from "@/app/types"
 import type { JSX } from "react"
+import { motion, AnimatePresence } from "motion/react"
 import ImageUI from "@/components/widgets/imageui/ImageUI"
 import "./skills.css"
 
@@ -125,35 +126,55 @@ export default function Skills() {
     // along with its logo.
     function getSkillCard({skill, logo}: SkillsObj): JSX.Element {
         return (
-            <div className="skill-card">
-                {logo ? (
-                    <ImageUI
-                        src={logo.src}
-                        width="25px"
-                        height="25px"
-                        alt={skill + "-logo"}
-                        originalWidth={logo.initWidth}
-                        originalHeight={logo.initHeight}
-                    />
-                ): 
-                <FaCode style={{height: "25px", width: "25px"}} />
-                }
-                <h5>{skill}</h5>
-            </div>
+            <AnimatePresence>
+                <motion.div 
+                    className="skill-card"
+                    initial={{opacity: 0, scale: 0}}
+                    animate={{opacity: 1, scale: 1}}
+                    exit={{opacity: 0, scale: 0}}
+                    transition={{duration: 0.2}}
+                >
+                    {logo ? (
+                        <ImageUI
+                            src={logo.src}
+                            width="25px"
+                            height="25px"
+                            alt={skill + "-logo"}
+                            originalWidth={logo.initWidth}
+                            originalHeight={logo.initHeight}
+                        />
+                    ): 
+                    <FaCode style={{height: "25px", width: "25px"}} />
+                    }
+                    <h5>{skill}</h5>
+                </motion.div>
+            </AnimatePresence>
         )
     }
 
     return (
         <section className="skills" id="techstack">
-            <div className="skills-section-header">
+            <motion.div 
+                className="skills-section-header"
+                initial={{opacity: 0, y: 40}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{duration: 0.5, delay: 0.5}}
+                viewport={{once: true}}
+            >
                 <h2>Skills I have learned along the way</h2>
                 <p>
                     In the past few years I have been developing skills
                     on different areas like the front-end, backend-end and utilizing third-party
                     tools.
                 </p>
-            </div>
-            <div className="skills-nav">
+            </motion.div>
+            <motion.div 
+                className="skills-nav"
+                initial={{opacity: 0, y: 40}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{duration: 0.5, delay: 0.5}}
+                viewport={{once: true}}
+            >
                 {viewOptions.map(option => (
                     <button 
                         className={
@@ -166,8 +187,14 @@ export default function Skills() {
                     {option}
                     </button>
                 ))}
-            </div>
-            <div className="skills-content">
+            </motion.div>
+            <motion.div
+                className="skills-content"
+                initial={{opacity: 0, y: 40}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{duration: 0.5, delay: 0.5}}
+                viewport={{once: true}}
+            >
                 {skills.map((skill, i) => {
                     const area: string = skill.area.toLowerCase()
                     const currentView: string = view.toLocaleLowerCase()
@@ -178,7 +205,7 @@ export default function Skills() {
                     </div>
                    ) : null
                 })}
-            </div>
+            </motion.div>
         </section>
     )
 }

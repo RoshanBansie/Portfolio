@@ -4,6 +4,7 @@
     margin: 10rem auto;
     position: relative;
     display: grid;
+    max-width: 1200px;
     grid-template-columns: 0.75fr 1fr;
     height: 50vh;
 }
@@ -26,10 +27,13 @@
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    scrollbar-color: var(--text-tertiary) var(--background-primary);
 }
 
 .headlines-container li {
     height: 50vh;
+    margin: 0 auto;
+    max-width: 500px;
     scroll-snap-align: center;
     display: flex;
     flex-direction: column;
