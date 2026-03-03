@@ -2,8 +2,9 @@
 
 .education-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    max-width: 1200px;
 }
 
 .education-section-header h2 {
@@ -14,46 +15,39 @@
     max-width: 60%;
 }
 
-.milestone-container {
-    display: flex;
-    align-items: top;
-    gap: 1rem;
-}
-
-.milestone-container, .milestone-group > * {
-    margin-top: 2rem;
-}
-
-.milestone-subcontainer ul {
-    padding: 0;
-    list-style: none;
-}
-
-.milestone-subcontainer li {
-    color: var(--text-primary);
+.education-content {
     margin: 1rem 0;
 }
 
-.milestone-group {
+.milestone-container {
+    border-top: 1px solid var(--button-secondary-border);
+    border-bottom: 1px solid var(--button-secondary-border);
+    padding: 3rem 0;
+    max-width: 600px;
+}
+
+.milestone-header {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-left: 2px solid var(--button-secondary-border);
-    padding: 0 2rem;
-    margin-top: 1rem;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
 }
 
-.education-section h3, .education-section h4 {
-    text-transform: capitalize;
+.milestone-collapsable {
+    margin-left: 1.75rem;
 }
 
-.institute-logo {
-    border-radius: 5px;
-    border: 1px solid var(--button-secondary-border);
+.milestone-relevant-courses {
+    margin: 1rem 0;
 }
 
-.milestone-period {
-    font-weight: bold;
+.milestone-relevant-courses li {
+    color: var(--text-tertiary);
+    margin: 1rem 0;
+}
+
+.milestone-description {
+    margin: 1rem 0;
 }
 
 @media (max-width: 700px) {
