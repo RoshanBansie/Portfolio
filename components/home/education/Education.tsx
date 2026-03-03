@@ -14,6 +14,10 @@ import type { MilestonesObj } from "@/app/types"
 // Styling
 import "./education.css"
 
+type collapsableObj = {
+    [key: string]: boolean
+}
+
 // Component that displays the education section on the homepage.
 // Creates a timeline of my educational milestones given by an array of objects
 // containing the milestones.
@@ -21,7 +25,7 @@ import "./education.css"
 // All the data needed to generate the JSX is within this component.
 export default function Education() {
 
-    const [open, setOpen] = React.useState({})
+    const [open, setOpen] = React.useState<collapsableObj>({})
 
     const education: MilestonesObj[] = [
         {
@@ -98,12 +102,12 @@ export default function Education() {
     ]
 
     // Returns whether a certain collapsable is open or not.
-    function getToggleStatus(id: string) {
-        return open[id]
+    function getToggleStatus(id: string): boolean {
+        return open[id] ?? false
     }
 
     // Toggles the open state or close state of collapsable.
-    function toggleCollapse(id: string) {
+    function toggleCollapse(id: string): void {
         setOpen(prev => {
             return {
                 ...prev,
@@ -116,7 +120,7 @@ export default function Education() {
     // The key is used to distinguish different milestones from each other.
     // Returns null on error.
     function getMilestoneBlock(milestoneBlock: MilestonesObj, key: number): null | JSX.Element {
-        const { milestone, institute, start, end, description, image } = milestoneBlock 
+        const { milestone, institute, start, end, description } = milestoneBlock 
 
         return (
             // Educational milestone has submilestones within one institute so group them togehter.
