@@ -1,10 +1,22 @@
 "use client"
 
-import { JSX } from "react"
+// Libraries
+import React from "react"
 import { motion } from "motion/react"
-import ImageUI from "@/components/widgets/imageui/ImageUI"
+
+// Icons
+import { FaChevronDown } from "react-icons/fa"
+
+// Types
+import { JSX } from "react"
 import type { MilestonesObj } from "@/app/types"
+
+// Styling
 import "./education.css"
+
+type collapsableObj = {
+    [key: string]: boolean
+}
 
 // Component that displays the education section on the homepage.
 // Creates a timeline of my educational milestones given by an array of objects
@@ -13,119 +25,143 @@ import "./education.css"
 // All the data needed to generate the JSX is within this component.
 export default function Education() {
 
+    const [open, setOpen] = React.useState<collapsableObj>({})
+
     const education: MilestonesObj[] = [
         {
+            milestone: "Online courses",
             institute: "Scrimba",
+            start: 2024,
+            end: "present",
+            description: " Learned Javascript, React.js, Typescript, Next.js, Node.js and Express.js",
             image: {
                 src: "/assets/scrimba-logo.png",
                 width: 800,
                 height: 800,
                 alt: "Scrimba logo"
 
-            },
-            milestones: [
-                {
-                    type: "Online courses",
-                    start: 2024,
-                    end: "present",
-                    skills: [" Learned Javascript, React.js, Typescript, Next.js, Node.js and Express.js"]
-                }
-            ]
+            }
         },
         {
+            milestone: "Bachelor Informatica",
             institute: "University of Amsterdam",
-             image: {
+            start: 2024,
+            end: "present",
+            description:
+            `
+            In the aforementioned courses, I gained experience working on software
+            in a team and learned about key concepts related to programming languages,
+            different network layers and their relevant protocols, designing EER diagrams, and implementing 3NF database schemas.
+            `,
+            relevantCourses: [
+                "Inleiding programmeren",
+                "Datastructuren en algoritmes",
+                "Webtechnologie",
+                "Programmeertalen",
+                "Networks and Networks Security",
+                "Moderne Databases"
+            ],
+            image: {
                 src: "/assets/uva-logo.png",
                 width: 1936,
                 height: 1936,
                 alt: "UvA logo"
-            },
-            milestones: [
-                {
-                    type: "Bachelor Informatica",
-                    start: 2024,
-                    end: "present",
-                    skills: [
-                        "Learned C, Python and SQL",
-                        "Datastructures and algorithms",
-                        "Designing relational databases",
-                        "Networks and Network Security",
-                    ]
-                },
-                {
-                    type: "Bachelor Biologie",
-                    start: 2023,
-                    end: 2024,
-                    skills: [
-                        "Introduction to basic statistics and using R to perform analytical tests and create graphs",
-                    ]
-                }
-            ]
+            }
         },
         {
+            milestone: "Bachelor Biologie",
+            institute: "University of Amsterdam",
+            start: 2023,
+            end: 2024,
+            description: "Introduction to basic statistics and using R to perform analytical tests and create graphs",
+            image: {
+                src: "/assets/uva-logo.png",
+                width: 1936,
+                height: 1936,
+                alt: "UvA logo"
+            }
+        },
+        {
+            milestone: "Highschool",
             institute: "Het Baken Trinitas Gymnasium",
+            start: 2017,
+            end: 2023,
+            description:
+            `
+            Learned and trained to utilize basic knowledge in unknown and new situations and also
+            learned basic scientific concepts and algebra.
+            `
+            ,
             image: {
                 src: "/assets/trinitas-logo.png",
                 width: 232,
                 height: 218,
                 alt: "Trinitas logo"
-            },
-            milestones: [
-                {
-                    type: "Highschool",
-                    start: 2017,
-                    end: 2023,
-                    skills: [
-                        "Learned and trained to utilize basic knowledge in unknown and new situations.",
-                        "Learned basic scientific concepts and algebra."
-                    ]
-                }
-            ]
+            }
         }
     ]
+
+    // Returns whether a certain collapsable is open or not.
+    function getToggleStatus(id: string): boolean {
+        return open[id] ?? false
+    }
+
+    // Toggles the open state or close state of collapsable.
+    function toggleCollapse(id: string): void {
+        setOpen(prev => {
+            return {
+                ...prev,
+                [id]: !prev[id]
+            }
+        })
+    }
 
     // Returns JSX element of a single educational milestone on the timeline.
     // The key is used to distinguish different milestones from each other.
     // Returns null on error.
     function getMilestoneBlock(milestoneBlock: MilestonesObj, key: number): null | JSX.Element {
-        const { institute, image, milestones } = milestoneBlock
-        const { src, width, height, alt } = image
-
-        if (milestones.length < 1) {
-            return null
-        }
+        const { milestone, institute, start, end, description } = milestoneBlock 
 
         return (
             // Educational milestone has submilestones within one institute so group them togehter.
             <div className="milestone-container" key={"milestone-" + key}>
-                <ImageUI
-                    src={src}
-                    originalWidth={width}
-                    originalHeight={height}
-                    alt={alt}
-                    width="50px"
-                    height="50px"
-                    className="institute-logo"
-                />
-                <div className="milestone-content">
-                    <h4>{institute}</h4>
-                    <div className={milestones.length > 1 ? "milestone-group" : ""}>
-                        {milestones.map((milestone, i) => {
-                            const {type, start, end, skills} = milestone
-                            return (
-                                <div className="milestone-subcontainer" key={"milestone-" + i}>
-                                    <h4>{type}</h4>
-                                    <p className="milestone-period">{start + "-" + end}</p>
-                                    <ul>
-                                        {skills.map((skill, i) => (
-                                            <li key={"skill-" + i}>{skill}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )
-                        })}
-                    </div>
+                <div className="milestone-header">
+                    <FaChevronDown 
+                        onClick={() => toggleCollapse(milestone)} 
+                        style={{
+                            transform: `rotate(${getToggleStatus(milestone) ? 180 : 0}deg)`,
+                            transition: "0.3s ease-in-out"
+                        }}
+                    />
+                    <h4>{milestone}</h4>
                 </div>
+                <motion.div
+                    className="milestone-collapsable"
+                    initial={false}
+                    animate={{
+                        height: getToggleStatus(milestone) ? "auto" : "0",
+                        marginTop: getToggleStatus(milestone) ? "1rem" : 0
+                    }}
+                    transition={{duration: 0.25, ease: "easeInOut"}}
+                    style={{overflow: "hidden"}}
+                >
+                    <h5>{institute}</h5>
+                    <p>{start + "-" + end}</p>
+                    {milestoneBlock.relevantCourses ? (
+                        <div className="milestone-relevant-courses">
+                            <h5>Relevant courses</h5>
+                            <ul>
+                                {milestoneBlock.relevantCourses.map(course => (
+                                    <li key={course}>{course}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ): null}
+                    <div className="milestone-description">
+                        <h5>Main activities</h5>
+                        <p>{description}</p>
+                    </div>
+                </motion.div>
             </div>
         )
     }

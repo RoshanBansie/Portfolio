@@ -34,7 +34,7 @@ export default function Hero() {
             transition={{duration: 0.5, delay: 0.4}}
             viewport={{once: true}}
           >
-            <DownloadBtn innerText="Resume" src="" style="primary" />
+            <DownloadBtn innerText="Resume" src="/resume.pdf" style="primary" />
             <button className="secondary-button">
                 <Link href="https://github.com/RoshanBansie" target="_blank" className="github-link">
                     <FiGithub style={{fontSize: "20px", marginRight: "8px"}} />

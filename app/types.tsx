@@ -7,19 +7,18 @@ export type ContactFormData = {
 }
 
 export type MilestonesObj = {
+    milestone: string,
     institute: string,
+    start: number,
+    end: number | string,
+    description: string
+    relevantCourses?: string[]
     image: {
         src: string,
         width: number,
         height: number,
         alt: string
     }
-    milestones: {
-        type: string,
-        start: number,
-        end: number | string,
-        skills: string[]
-    }[]
 }
 
 export type Project = {

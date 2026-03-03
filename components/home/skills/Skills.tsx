@@ -129,22 +129,22 @@ export default function Skills() {
             <AnimatePresence>
                 <motion.div 
                     className="skill-card"
-                    initial={{opacity: 0, scale: 0}}
-                    animate={{opacity: 1, scale: 1}}
-                    exit={{opacity: 0, scale: 0}}
-                    transition={{duration: 0.2}}
+                    initial={{opacity: 0, y: 20}}
+                    animate={{opacity: 1, y: 0}}
+                    exit={{opacity: 0, y: 20}}
+                    transition={{duration: 0.3}}
                 >
                     {logo ? (
                         <ImageUI
                             src={logo.src}
-                            width="25px"
-                            height="25px"
+                            width="20px"
+                            height="20px"
                             alt={skill + "-logo"}
                             originalWidth={logo.initWidth}
                             originalHeight={logo.initHeight}
                         />
                     ): 
-                    <FaCode style={{height: "25px", width: "25px"}} />
+                    <FaCode style={{height: "20px", width: "20px"}} />
                     }
                     <h5>{skill}</h5>
                 </motion.div>

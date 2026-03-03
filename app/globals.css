@@ -1,11 +1,11 @@
 :root {
-  --background-primary: #050505;
+  --background-primary: #000000;
   --background-secondary: #fafafa;
   --background-tertiary: #090909;
 
   --text-primary: #ededed;
   --text-secondary: #000;
-  --text-tertiary: #696969;
+  --text-tertiary: #818181;
 
   --button-primary-hover: #ccc;
   --button-secondary-hover: #1a1a1a;
@@ -23,7 +23,7 @@ html.light {
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+  --button-secondary-border: #e0dede;
 }
 
 html,
@@ -80,7 +80,7 @@ h1 {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 40px;
   margin: 1rem 0;
 }
 
