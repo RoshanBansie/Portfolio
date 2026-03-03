@@ -21,12 +21,12 @@
 }
 
 .project-card-image-desktop, .project-card-image-mobile {
-    border: 1px solid var(--button-secondary-border);
-    border-radius: 16px;
     object-fit: cover;
 }
 
 .project-card-img-container {
+    border: 1px solid var(--button-secondary-border);
+    border-radius: 16px;
     overflow: hidden;
 }
 
@@ -49,6 +49,7 @@
 
 .project-tag {
     padding: 0.5rem;
+    margin: 5px 5px 0 0;
     border: 1px solid var(--button-secondary-border);
     background-color: var(--background-tertiary);
     border-radius: 1rem;
@@ -64,7 +65,7 @@
 }
 
 .project-description {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0;
 }
 
 @media (max-width: 1100px) {
