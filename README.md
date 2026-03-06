@@ -34,3 +34,85 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL!;
+
+type ContactFormData = {
+  fullName: string;
+  email: string;
+  subject: string;
+  message: string;
+  company?: string; // honeypot
+};
+
+const RATE_LIMIT = new Map<string, number>();
+
+export async function POST(req: Request) {
+  try {
+    const ip =
+      req.headers.get("x-forwarded-for") ??
+      "unknown";
+
+    const lastRequest = RATE_LIMIT.get(ip);
+
+    if (lastRequest && Date.now() - lastRequest < 10000) {
+      return Response.json(
+        { error: "Too many requests" },
+        { status: 429 }
+      );
+    }
+
+    RATE_LIMIT.set(ip, Date.now());
+
+    const body: ContactFormData = await req.json();
+
+    const { fullName, email, subject, message, company } = body;
+
+    // Honeypot spam check
+    if (company) {
+      return Response.json({ ok: true });
+    }
+
+    // Basic validation
+    if (!fullName || !email || !subject || !message) {
+      return Response.json(
+        { error: "Missing fields" },
+        { status: 400 }
+      );
+    }
+
+    const { error } = await resend.emails.send({
+      from: "Website Contact <contact@yourdomain.com>",
+      to: [CONTACT_EMAIL],
+      subject: `Contact Form: ${subject}`,
+      reply_to: email,
+      html: `
+        <h2>New Contact Form Message</h2>
+        <p><strong>Name:</strong> ${fullName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p>${message}</p>
+      `,
+    });
+
+    if (error) {
+      return Response.json(
+        { error: "Email failed" },
+        { status: 500 }
+      );
+    }
+
+    return Response.json({ success: true });
+
+  } catch (err) {
+    return Response.json(
+      { error: "Server error" },
+      { status: 500 }
+    );
+  }
+}

@@ -3,7 +3,7 @@ export type ContactFormData = {
     email: string,
     message: string,
     subject: string,
-    company: string
+    company?: string
 }
 
 export type MilestonesObj = {
