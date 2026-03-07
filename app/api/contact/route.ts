@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   
   const resend = new Resend(RESEND_API_KEY)
   try {
-    const sender = `Contact <info@${DOMAIN}>`
+    const sender = `Contact Portfolio <info@${DOMAIN}>`
     const emailHtml = await render(React.createElement(ContactMail, {
         fullName, email, subject, message
     }))

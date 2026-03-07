@@ -101,6 +101,7 @@ export default function ContactForm() {
             setIsSubmitted(true)
             await sendMail(formData)
             toggleSubmitSucces()
+            setIsSubmitted(false)
             resetForm()
             
         } catch(e) {

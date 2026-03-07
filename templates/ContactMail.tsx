@@ -3,7 +3,14 @@ import type { ContactFormData } from "@/app/types"
 
 export default function ContactMail({fullName, email, subject, message}: ContactFormData) {
     return (
-        <Section style={{textAlign: "center", padding: "5rem 2rem"}}>
+        <Section 
+            style={{
+                backgroundColor: "black",
+                textAlign: "center",
+                padding: "5rem 2rem",
+                margin: 0
+            }}
+        >
             <Text
                 style={{
                     fontSize: 12,
@@ -31,19 +38,19 @@ export default function ContactMail({fullName, email, subject, message}: Contact
             <p
                 style={{
                     color: "#696969",
-                    maxWidth: "40rem",
-                    margin: "0 auto"
+                    maxWidth: "30rem",
+                    margin: "1rem auto"
                 }}
             >
            {message}
             </p>
-            <div style={{display: "inline-flex", margin: "1rem auto"}}>
+            <div style={{display: "inline-flex", margin: "auto"}}>
                     <p
                         style={{
-                        fontSize: '14px',
-                        lineHeight: '20px',
-                        fontWeight: 600,
-                        color: '#ededed',
+                            fontSize: '14px',
+                            fontWeight: 600,
+                            color: '#ededed',
+                            margin: 0
                         }}
                     >
                         {fullName}
@@ -51,7 +58,8 @@ export default function ContactMail({fullName, email, subject, message}: Contact
                     <span style={{
                         fontSize: '14px',
                         lineHeight: '20px',
-                        margin: "0 8px"
+                        margin: "0 8px",
+                        color: '#ededed'
                     }}>
                         •
                     </span>
@@ -60,6 +68,7 @@ export default function ContactMail({fullName, email, subject, message}: Contact
                             margin: 0,
                             fontSize: '14px',
                             lineHeight: '20px',
+                            color: '#ededed'
                         }}
                     >
                         {email}
