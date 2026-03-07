@@ -15,32 +15,24 @@ export async function POST(req: Request) {
   const EMAIL = process.env.EMAIL
   
   const resend = new Resend(RESEND_API_KEY)
-    async function send(sender, receiver, replyTo, subject, content) {
-        const {data, error} = await resend.emails.send({
-            from: sender,
-            to: receiver,
-            replyTo: replyTo,
-            subject: subject,
-            html: content
-        })
-        
-        if (error) {
-            console.error(error)
-            return Response.json({ error }, { status: 500 })
-        }
+  try {
+    const sender = `Contact <info@${DOMAIN}>`
+    const emailHtml = await render(React.createElement(ContactMail, {
+        fullName, email, subject, message
+    }))
+    const { data, error } = await resend.emails.send({
+      from: sender,
+      to: [EMAIL!],
+      subject: subject,
+      html: emailHtml,
+    });
+
+    if (error) {
+      return Response.json({ error }, { status: 500 });
     }
 
-    try {
-        const sender = `Contact <info@${DOMAIN}>`
-        const emailHtml = await render(React.createElement(ContactMail, {
-            fullName, email, subject, message
-        }))
-        await send(sender, [EMAIL], email, subject, emailHtml)
-  
-    } catch(error) {
-      if (error instanceof Error) {
-        console.error(`Contact mailer: ${error}`)
-        return Response.json({ error }, { status: 500 })
-      }
-    }
+    return Response.json(data);
+  } catch (error) {
+    return Response.json({ error }, { status: 500 });
+  }
 }

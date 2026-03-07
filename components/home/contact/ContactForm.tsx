@@ -107,7 +107,6 @@ export default function ContactForm() {
             setIsSubmitted(false)
             e instanceof Error && setError(e.message)
         }
-        isSubmitted && setIsSubmitted(false)
     }
 
     return (
