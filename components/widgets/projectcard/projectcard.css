@@ -1,0 +1,67 @@
+@import "@/app/globals.css";
+
+.project-card {
+    width: 40rem;
+    border-radius: 20px;
+}
+
+.project-card-image-desktop, .project-card-image-mobile {
+    object-fit: cover;
+}
+
+.project-card-img-container {
+    border: 1px solid var(--button-secondary-border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.project-card-image-desktop:hover, .project-card-image-mobile:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+.project-header {
+    border-radius: 3rem;
+    border: 1px solid var(--button-secondary-border);
+}
+
+.project-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+    margin: 1rem 0;
+}
+
+.project-tag {
+    padding: 0.5rem;
+    margin: 5px 5px 0 0;
+    border: 1px solid var(--button-secondary-border);
+    background-color: var(--background-tertiary);
+    border-radius: 1rem;
+    width: fit-content;
+}
+
+.project-card button {
+    margin: 1rem 0;
+}
+
+.project-card-image-mobile {
+    display: none;
+}
+
+.project-description {
+    padding: 1rem 0;
+}
+
+
+@media (max-width: 1024px) {
+    .project-card-image-desktop {
+        display: none;
+    }
+    .project-card-image-mobile {
+        display: flex;
+    }
+    .project-card {
+        width: 24rem;
+    }
+}

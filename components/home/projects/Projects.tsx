@@ -1,6 +1,6 @@
 "use client"
 
-import getProjectCard from "@/utils/getProjectCard"
+import ProjectCard from "@/components/widgets/projectcard/ProjectCard"
 import { Project } from "@/app/types"
 import { motion } from "motion/react"
 import "./projects.css"
@@ -33,7 +33,7 @@ export default function Projects({projects}: ProjectsSectionProps) {
                 transition={{duration: 0.5, delay: 0.5}}
                 viewport={{once: true}}
             >
-                {projects.map(project => getProjectCard(project))}
+                {projects.map(project => ProjectCard(project))}
             </motion.div>
         </section>
     )

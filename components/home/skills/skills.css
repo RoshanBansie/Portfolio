@@ -62,3 +62,9 @@
         width: 10rem;
     }
 }
+
+@media (max-width: 405px) {
+    .skill-card {
+        width: 9rem;
+    }
+}

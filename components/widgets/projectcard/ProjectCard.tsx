@@ -1,11 +1,12 @@
     import type { Project } from "@/app/types"
     import ImageUI from "@/components/widgets/imageui/ImageUI"
     import Link from "next/link"
+    import "./projectcard.css"
     
 
     // Returns the UI-card for the projects.
     // Takes in an object of type ProjectCard
-    export default function getProjectCard(project: Project) {
+    export default function ProjectCard(project: Project) {
         const {title, description, tags, image, link} = project
         const {src, width, height, alt} = image
         return (
