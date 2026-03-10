@@ -14,6 +14,7 @@ const projects: Project[] = [
             height: 898,
             alt: "Notify website image"
         },
+        readme: "/readmes/README_notify.md",
         link: "/projects/notify",
         content: [
             {

@@ -32,6 +32,7 @@ export type Project = {
         height: number,
         alt: string,
     },
+    readme: string,
     link: string,
     content: {title: string, text: string}[]
 }
