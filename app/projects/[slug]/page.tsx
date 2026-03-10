@@ -23,7 +23,7 @@ export default async function Page({params}: PageProps) {
     const filtered: Project[] = projects.filter(project => {
         return project.title.toLowerCase() === slug.toLowerCase()
     })
-    const {title, description, image, content}: Project = filtered[0]
+    const {title, description, image, readme, content}: Project = filtered[0]
 
     function getParagaphs() {
         const parsJSX = content.map((par, i) => {
@@ -52,7 +52,7 @@ export default async function Page({params}: PageProps) {
                     </div>
                     <div className="project-action-btns">
                         <ArrowLink innerText="Visit" dst="https://notify.roshanbansie.nl" />
-                        <DownloadBtn innerText="Readme" src="" style="primary" />
+                        <DownloadBtn innerText="README" src={readme} style="primary" />
                     </div>
                 </section>
                 <ImageUI

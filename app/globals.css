@@ -58,6 +58,7 @@ main {
 }
 
 main > * {
+  scroll-margin-top: 8rem;
   width: 80%;
   margin: 5rem auto;
   max-width: 1800px;
@@ -93,7 +94,7 @@ h4 {
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 32px;
   color: var(--text-tertiary);
 }

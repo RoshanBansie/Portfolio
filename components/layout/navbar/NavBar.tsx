@@ -39,6 +39,7 @@ export default function Navbar() {
                     </div>
                     <nav className="nav-menu">
                         <ul>
+                            <Link className="navlink" href="/">Home</Link>
                             <Link className="navlink" href="/projects">Projects</Link>
                             <Link className="navlink" href="/#techstack">Techstack</Link>
                             <Link className="navlink" href="/#about-me">About me</Link>

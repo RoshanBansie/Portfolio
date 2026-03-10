@@ -52,6 +52,7 @@ label {
 }
 
 input, textarea {
+    color: var(--text-primary);
     font-family: var(--font-geist-sans);
     background-color: transparent;
     border: 1px solid var(--button-secondary-border);

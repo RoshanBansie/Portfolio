@@ -9,10 +9,8 @@ import { FaCheck } from "react-icons/fa6"
 
 // Components
 import Spinner from "@/components/widgets/spinner/Spinner"
-import Link from "next/link"
 
 // Utils
-import sendMail from "@/utils/sendMail"
 import { 
     validateName,
     validateEmail,
@@ -67,6 +65,17 @@ export default function ContactForm() {
         }, 2000)
     }
 
+    async function sendMail(formData: ContactFormData) {
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            body: JSON.stringify(formData)
+        })
+
+        if (!res.ok) {
+            throw new Error("Failed to send email; something went wrong")
+        }
+    }
+
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
         setError("")
@@ -88,16 +97,17 @@ export default function ContactForm() {
             validateSubject(formData.subject)
             validateMessage(formData.message)
 
+            // Send email
             setIsSubmitted(true)
             await sendMail(formData)
-            setIsSubmitted(false)
             toggleSubmitSucces()
+            setIsSubmitted(false)
             resetForm()
-
+            
         } catch(e) {
+            setIsSubmitted(false)
             e instanceof Error && setError(e.message)
         }
-        isSubmitted && setIsSubmitted(false)
     }
 
     return (
