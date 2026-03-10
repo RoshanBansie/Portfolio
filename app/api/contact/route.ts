@@ -26,16 +26,20 @@ export async function POST(req: Request, res: Response) {
   const RESEND_API_KEY = process.env.RESEND_API_KEY
   const DOMAIN = process.env.DOMAIN
   const EMAIL = process.env.EMAIL
+
+  // Rate limiter
+  try {
+    const ip: string = req.headers.get("x-forwarded-for") ?? "unknown"
+    await rateLimiter.consume(ip)
+  } catch(error) {
+    return Response.json({error: "Too many requests"}, {status: 429})
+  }
   
   try {
     // CORS
     if (req.method !== "POST") {
       throw new Error("Method not allowed", {cause: 405})
     }
-  
-    // Rate limiter
-    const ip: string = req.headers.get("x-forwarded-for") ?? "unknown"
-    await rateLimiter.consume(ip)
 
     // Email sender
     const resend = new Resend(RESEND_API_KEY)

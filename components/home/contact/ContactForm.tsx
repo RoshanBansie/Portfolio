@@ -74,7 +74,7 @@ export default function ContactForm() {
 
         if (!res.ok) {
             if (res.status == 429) {
-                throw new Error("You can only send 1 email per 3 seconds")
+                throw new Error("You can only send 1 email per 10 seconds")
             } else {
                 throw new Error("Failed to send email; something went wrong")
             }
