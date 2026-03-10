@@ -12,6 +12,7 @@
     "@react-email/components": "^1.0.6",
     "motion": "^12.25.0",
     "next": "^16.1.6",
+    "rate-limiter-flexible": "^9.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-email": "^5.2.5",

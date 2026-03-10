@@ -65,6 +65,7 @@ export default function ContactForm() {
         }, 2000)
     }
 
+    // Sends API request to email route containing the formData.
     async function sendMail(formData: ContactFormData) {
         const res = await fetch("/api/contact", {
             method: "POST",
@@ -72,7 +73,11 @@ export default function ContactForm() {
         })
 
         if (!res.ok) {
-            throw new Error("Failed to send email; something went wrong")
+            if (res.status == 429) {
+                throw new Error("You can only send 1 email per 3 seconds")
+            } else {
+                throw new Error("Failed to send email; something went wrong")
+            }
         }
     }
 
