@@ -11,8 +11,9 @@ import type { ContactFormData } from '@/app/types';
 
 // Middleware
 import { rateLimiter } from '@/middleware/rateLimiter';
+import { NextRequest } from 'next/server';
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: NextRequest) {
   
   // Parse request
   const { fullName, email, subject, message }: ContactFormData = await req.json()
