@@ -10,6 +10,22 @@
     height: 50vh;
 }
 
+.philosophy-container::after {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    content: "";
+    background: linear-gradient(
+        to bottom,
+        transparent 70%,
+        var(--background-primary)
+    );
+}
+
 .philosophy-section-header {
     position: sticky;
     top: 0;
@@ -32,7 +48,7 @@
 }
 
 .headlines-container li {
-    height: 50vh;
+    height: 30vh;
     margin: 0 auto;
     max-width: 500px;
     scroll-snap-align: center;
@@ -104,21 +120,6 @@
     .headlines-container {
         position: relative;
         height: 30vh;
-    }
-    .philosophy-container::after {
-        position: absolute;
-        pointer-events: none;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-        content: "";
-        background: linear-gradient(
-            to bottom,
-            transparent 70%,
-            var(--background-primary)
-        );
     }
     .philosophy-section-header {
         height: fit-content;
