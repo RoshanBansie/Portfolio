@@ -172,7 +172,7 @@ export default function Education() {
                 className="education-section-header"
                 initial={{opacity: 0, x: -40}}
                 whileInView={{opacity: 1, x: 0}}
-                transition={{duration: 0.5, delay: 0.5}}
+                transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
                 <h2>Educational milestones I've achieved</h2>
@@ -185,7 +185,7 @@ export default function Education() {
                 className="education-content"
                 initial={{opacity: 0, x: 40}}
                 whileInView={{opacity: 1, x: 0}}
-                transition={{duration: 0.5, delay: 0.5}}
+                transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
                {education.map((milestoneBlock, i) => getMilestoneBlock(milestoneBlock, i))}
