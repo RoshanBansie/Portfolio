@@ -1,8 +1,15 @@
+// Types
 import type { Metadata } from "next";
+import type { Viewport } from "next";
+
+// Fonts
 import { Geist, Geist_Mono } from "next/font/google";
-import Head from "next/head";
+
+// Components
 import Navbar from "@/components/layout/navbar/NavBar";
 import Footer from "@/components/layout/footer/Footer";
+
+// Styling
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,6 +26,10 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description: "Portolio website where I list my recent projects, techstack, development philosophy and educational timeline.",
 };
+
+export const viewport: Viewport = {
+  userScalable: false
+}
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
