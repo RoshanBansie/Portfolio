@@ -53,8 +53,8 @@ export type ImageUIProps = {
     src: string,
     originalHeight: number,
     originalWidth: number,
-    height: string,
-    width: string,
+    skeletonHeight: string,
+    skeletonWidth: string,
     alt: string,
     className?: string,
 }

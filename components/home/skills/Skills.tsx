@@ -137,11 +137,12 @@ export default function Skills() {
                     {logo ? (
                         <ImageUI
                             src={logo.src}
-                            width="20px"
-                            height="20px"
+                            skeletonWidth="20px"
+                            skeletonHeight="20px"
                             alt={skill + "-logo"}
                             originalWidth={logo.initWidth}
                             originalHeight={logo.initHeight}
+                            className="skill-card-icons"
                         />
                     ): 
                     <FaCode style={{height: "20px", width: "20px"}} />

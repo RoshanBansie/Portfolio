@@ -64,7 +64,7 @@ main {
 }
 
 main > * {
-  scroll-margin-top: 8rem;
+  scroll-margin-top: 10rem;
   width: 80%;
   margin: 5rem auto;
   max-width: 1800px;

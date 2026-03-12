@@ -113,26 +113,26 @@ export default function About() {
                         I have developed the workflow as described below.
                     </p>
                 </motion.div>
-                <ul className="workflow-list">
+                <motion.ul 
+                    className="workflow-list"
+                    initial={{y: 40}}
+                    whileInView={{y: 0}}
+                    transition={{duration: 0.5}}
+                    viewport={{once: true}}
+                >
                     {workflowSteps.map((step, i) => {
                         const { headline, explanation } = step
                         return (
-                            <motion.li 
-                                key={"headline-"+ i}
-                                initial={{y: 40}}
-                                whileInView={{y: 0}}
-                                transition={{duration: 0.5, delay: i*0.1}}
-                                viewport={{once: true}}
-                            >
+                            <li key={"headline-"+ i}>
                                 <div className="workflow-item-enumerator">
                                     <h5>{i+1}</h5>
                                 </div>
                                 <h4>{headline}</h4>
                                 <p>{explanation}</p>
-                            </motion.li>
+                            </li>
                         )
                     })}
-                </ul>
+                </motion.ul>
             </div>
         </section>
     )

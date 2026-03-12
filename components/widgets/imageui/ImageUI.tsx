@@ -11,21 +11,25 @@ import type { ImageUIProps } from "@/app/types"
 // I.e. while the image is still loading, a skeleton
 // image appears on the frontend.
 // If the image is fully loaded, it will be displayed.
-export default function ImageUI({src, width, height, alt, className, originalHeight, originalWidth}: ImageUIProps) {
+export default function ImageUI({
+    src, skeletonWidth, skeletonHeight, alt, className, originalHeight, originalWidth
+}: ImageUIProps) {
     const [isLoading, setIsLoading] = React.useState<boolean>(true)
     return (
         <div>
-            {isLoading && <Skeleton type="image" width={width} height={height} />}
+            {isLoading && 
+                <Skeleton 
+                    type="image" 
+                    width={skeletonWidth} 
+                    height={skeletonHeight} 
+                />
+            }
             <Image
                 src={src}
                 width={originalWidth}
                 height={originalHeight}
                 alt={alt}
-                style={{
-                    opacity: isLoading ? "0" : "100",
-                    height: isLoading ? "0" : height,
-                    width: isLoading ? "0" : width
-                }}
+                style={{opacity: isLoading ? "0" : "100"}}
                 onLoad={() => setIsLoading(false)}
                 className={className}
             />

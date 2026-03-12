@@ -17,19 +17,10 @@
                             src={src}
                             originalWidth={width}
                             originalHeight={height}
-                            height="25rem"
-                            width="100%"
+                            skeletonHeight="25rem"
+                            skeletonWidth="100%"
                             alt={alt}
-                            className="project-card-image-desktop"
-                        />
-                        <ImageUI
-                            src={src}
-                            originalWidth={width}
-                            originalHeight={height}
-                            height="15rem"
-                            width="100%"
-                            alt={alt}
-                            className="project-card-image-mobile"
+                            className="project-card-image"
                         />
                     </Link>
                 </div>

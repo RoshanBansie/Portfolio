@@ -57,21 +57,12 @@ export default async function Page({params}: PageProps) {
                 </section>
                 <ImageUI
                     src={image.src}
-                    width="100%"
-                    height="500px"
+                    skeletonWidth="100%"
+                    skeletonHeight="500px"
                     alt={image.alt}
                     originalHeight={image.height}
                     originalWidth={image.width}
-                    className="project-page-img-desktop"
-                />
-                 <ImageUI
-                    src={image.src}
-                    width="100%"
-                    height="275px"
-                    alt={image.alt}
-                    originalHeight={image.height}
-                    originalWidth={image.width}
-                    className="project-page-img-mobile"
+                    className="project-page-img"
                 />
                 {getParagaphs()}
             </article>

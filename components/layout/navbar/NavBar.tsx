@@ -20,7 +20,7 @@ export default function Navbar() {
         <header>
             <div className="nav-container">
                 <div className="nav-inner">
-                    <div>
+                    <div className="nav-left">
                         <Link href="/" className="logo">Roshan Bansie</Link>
                         <motion.ul
                             className="toggle-menu"
