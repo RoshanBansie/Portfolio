@@ -1,3 +1,5 @@
+@import "@/app/globals.css";
+
 .skeleton {
   animation: skeleton-loading 0.75s linear infinite alternate;
   width: 100%;
@@ -7,10 +9,10 @@
 
 @keyframes skeleton-loading {
   0% {
-    background-color: hsl(0, 0%, 10%);
+    background-color: var(--skeleton-initial);
   }
   100% {
-    background-color: hsl(0, 0%, 8%);
+    background-color: var(--skeleton-animate);
   }
 }
 
