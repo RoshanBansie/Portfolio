@@ -110,6 +110,7 @@
 
 @media (max-width: 700px) {
     .philosophy-container {
+        margin: 5rem auto;
         display: block;
         height: fit-content;
     }
@@ -125,13 +126,7 @@
         height: fit-content;
     }
     .headlines-container li {
-        height: 20vh;
-        margin-bottom: 1rem;
-    }
-}
-
-@media (max-width: 430px) {
-    .philosophy-container {
-        gap: 1.5rem;
+        height: fit-content;
+        margin: 3rem auto;
     }
 }

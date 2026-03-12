@@ -13,7 +13,7 @@ header {
     z-index: 3;
     width: 95%;
     max-width: 2200px;
-    padding: 1.5rem 0.5rem;
+    padding: 1rem 0;
     background: var(--background-primary);
 }
 
@@ -26,31 +26,37 @@ header {
     align-items: center;
 }
 
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .nav-menu ul {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
-    margin-left: 3.5rem;
 }
 
 .logo {
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .navlink {
     color: var(--text-tertiary);
-    margin: 0 0.5rem;
+    padding: 8px;
+}
+
+.navlink:hover {
+    color: var(--text-primary);
+    border-radius: 8px;
 }
 
 .toggle-menu li {
     color: var(--text-tertiary);
     margin: 1rem 0;
-}
-
-.navbtn-links {
-    font-weight: bold;
 }
 
 .navbtn-links:hover {
@@ -96,6 +102,9 @@ header {
         border-radius: 0;
         padding: 1rem;
 
+    }
+    .nav-left {
+        display: block;
     }
     .nav-menu, .nav-btns {
         display: none;

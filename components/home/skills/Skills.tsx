@@ -137,11 +137,12 @@ export default function Skills() {
                     {logo ? (
                         <ImageUI
                             src={logo.src}
-                            width="20px"
-                            height="20px"
+                            skeletonWidth="20px"
+                            skeletonHeight="20px"
                             alt={skill + "-logo"}
                             originalWidth={logo.initWidth}
                             originalHeight={logo.initHeight}
+                            className="skill-card-icons"
                         />
                     ): 
                     <FaCode style={{height: "20px", width: "20px"}} />
@@ -156,8 +157,8 @@ export default function Skills() {
         <section className="skills" id="techstack">
             <motion.div 
                 className="skills-section-header"
-                initial={{opacity: 0, y: 40}}
-                whileInView={{opacity: 1, y: 0}}
+                initial={{y: 40}}
+                whileInView={{y: 0}}
                 transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
@@ -170,8 +171,8 @@ export default function Skills() {
             </motion.div>
             <motion.div 
                 className="skills-nav"
-                initial={{opacity: 0, y: 40}}
-                whileInView={{opacity: 1, y: 0}}
+                initial={{y: 40}}
+                whileInView={{y: 0}}
                 transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
@@ -190,8 +191,8 @@ export default function Skills() {
             </motion.div>
             <motion.div
                 className="skills-content"
-                initial={{opacity: 0, y: 40}}
-                whileInView={{opacity: 1, y: 0}}
+                initial={{y: 40}}
+                whileInView={{y: 0}}
                 transition={{duration: 0.5}}
                 viewport={{once: true}}
             >

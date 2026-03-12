@@ -3,6 +3,7 @@
 import React from "react";
 import { IoSunny } from "react-icons/io5"
 import { IoMoon } from "react-icons/io5"
+import ThemeColorUpdater from "@/utils/ThemeColorUpdater";
 import "./switch.css"
 
 export default function Switch() {
@@ -32,6 +33,7 @@ export default function Switch() {
             >
                 {theme === "light" ? <IoSunny /> : <IoMoon />}
             </div>
+            <ThemeColorUpdater theme={theme} />
         </button>
     )
 }
