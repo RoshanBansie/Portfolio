@@ -51,6 +51,16 @@ label {
     font-weight: bold;
 }
 
+label[for="company"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    color: transparent
+}
+
 input, textarea {
     color: var(--text-primary);
     font-family: var(--font-geist-sans);

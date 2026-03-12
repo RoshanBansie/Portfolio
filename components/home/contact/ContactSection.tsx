@@ -55,12 +55,14 @@ export default function ContactSection() {
                             <Link 
                                 href="https://github.com/RoshanBansie" target="_blank"
                                 style={{fontSize: "20px"}}
+                                aria-label="Github link"
                             >
                                 <FiGithub />
                             </Link>
                             <Link 
                                 href="https://linkedin.com/in/roshan-bansie-94a825301" target="_blank"
                                 style={{fontSize: "20px"}}
+                                aria-label="LinkedIn link"
                             >
                                 <FaLinkedinIn />
                             </Link>

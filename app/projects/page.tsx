@@ -26,6 +26,7 @@ export default function Page() {
                 {projects.map((project, i) => {
                     return (
                         <motion.div
+                            className="project-card-animation-container"
                             key={"project-animation-"+i}
                             initial={{opacity: 0, y: 40}}
                             whileInView={{opacity: 1, y: 0}}

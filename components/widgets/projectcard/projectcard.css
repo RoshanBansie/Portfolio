@@ -65,3 +65,9 @@
         width: 24rem;
     }
 }
+
+@media (max-width: 405px) {
+    .project-card {
+        width: 22rem;
+    }
+}

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  userScalable: false
+  userScalable: false,
 }
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
