@@ -4,7 +4,7 @@ import React from "react"
 import { motion } from "motion/react"
 import Link from "next/link"
 import ToggleLink from "./ToggleLink"
-import Menu from "@/components/widgets/menu/Menu"
+import Menu from "@/components/widgets/menu/Menu"   
 import Switch from "@/components/widgets/switch/Switch"
 import "./navbar.css"
 
@@ -24,6 +24,7 @@ export default function Navbar() {
                         <Link href="/" className="logo">Roshan Bansie</Link>
                         <motion.ul
                             className="toggle-menu"
+                            initial={{height: "0"}}
                             animate={{height: open ? "100vh" : "0"}}
                             transition={{duration: 0.5, ease: "easeInOut"}}
                             style={{overflow: "hidden"}}

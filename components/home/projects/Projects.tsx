@@ -1,6 +1,6 @@
 "use client"
 
-import getProjectCard from "@/utils/getProjectCard"
+import ProjectCard from "@/components/widgets/projectcard/ProjectCard"
 import { Project } from "@/app/types"
 import { motion } from "motion/react"
 import "./projects.css"
@@ -17,7 +17,7 @@ export default function Projects({projects}: ProjectsSectionProps) {
                 className="projects-section-header"
                 initial={{opacity: 0, y: 40}}
                 whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: 1}}
+                transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
                 <h2>Explore what I've been up to lately </h2>
@@ -30,10 +30,10 @@ export default function Projects({projects}: ProjectsSectionProps) {
                 className="projects-container"
                 initial={{opacity: 0, x: -40}}
                 whileInView={{opacity: 1, x: 0}}
-                transition={{duration: 0.5, delay: 0.5}}
+                transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
-                {projects.map(project => getProjectCard(project))}
+                {projects.map(project => ProjectCard(project))}
             </motion.div>
         </section>
     )

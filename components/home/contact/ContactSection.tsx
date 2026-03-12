@@ -21,7 +21,7 @@ export default function ContactSection() {
                 className="contact-section-header"
                 initial={{opacity: 0, y: 40}}
                 whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: 0.5}}
+                transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
                 <h2>Lets get in touch</h2>
@@ -35,7 +35,7 @@ export default function ContactSection() {
                 className="contact-content"
                 initial={{opacity: 0, y: 40}}
                 whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: 1}}
+                transition={{duration: 0.5, delay: 0.5}}
                 viewport={{once: true}}
             >
                 <ContactForm />
@@ -55,12 +55,14 @@ export default function ContactSection() {
                             <Link 
                                 href="https://github.com/RoshanBansie" target="_blank"
                                 style={{fontSize: "20px"}}
+                                aria-label="Github link"
                             >
                                 <FiGithub />
                             </Link>
                             <Link 
                                 href="https://linkedin.com/in/roshan-bansie-94a825301" target="_blank"
                                 style={{fontSize: "20px"}}
+                                aria-label="LinkedIn link"
                             >
                                 <FaLinkedinIn />
                             </Link>

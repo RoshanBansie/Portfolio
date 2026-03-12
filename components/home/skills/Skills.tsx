@@ -158,7 +158,7 @@ export default function Skills() {
                 className="skills-section-header"
                 initial={{opacity: 0, y: 40}}
                 whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: 0.5}}
+                transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
                 <h2>Skills I have learned along the way</h2>
@@ -172,7 +172,7 @@ export default function Skills() {
                 className="skills-nav"
                 initial={{opacity: 0, y: 40}}
                 whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: 0.5}}
+                transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
                 {viewOptions.map(option => (
@@ -192,7 +192,7 @@ export default function Skills() {
                 className="skills-content"
                 initial={{opacity: 0, y: 40}}
                 whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: 0.5}}
+                transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
                 {skills.map((skill, i) => {

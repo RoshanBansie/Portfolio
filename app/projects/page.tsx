@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "motion/react"
-import getProjectCard from "@/utils/getProjectCard"
+import ProjectCard from "@/components/widgets/projectcard/ProjectCard"
 import projects from "@/data/projects"
 import "./page.css"
 
@@ -26,13 +26,14 @@ export default function Page() {
                 {projects.map((project, i) => {
                     return (
                         <motion.div
+                            className="project-card-animation-container"
                             key={"project-animation-"+i}
                             initial={{opacity: 0, y: 40}}
                             whileInView={{opacity: 1, y: 0}}
                             transition={{duration: 0.5, delay: i*0.2+0.5}}
                             viewport={{once: true}}
                         >
-                            {getProjectCard(project)}
+                            {ProjectCard(project)}
                         </motion.div>
                     )
                 })}

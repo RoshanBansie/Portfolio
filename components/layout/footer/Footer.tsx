@@ -11,10 +11,20 @@ export default function Footer() {
                 <h4>Roshan Bansie</h4>
                 <p>roshan_b@outlook.com</p>
                 <div className="socials-container">
-                    <Link href="https://github.com/RoshanBansie" target="_blank" className="social-icon">
+                    <Link 
+                        href="https://github.com/RoshanBansie" 
+                        target="_blank" 
+                        className="social-icon"
+                        aria-label="Github link"
+                    >
                         <FiGithub />
                     </Link>
-                    <Link href="https://linkedin.com/in/roshan-bansie-94a825301" target="_blank" className="social-icon">
+                    <Link 
+                        href="https://linkedin.com/in/roshan-bansie-94a825301" 
+                        target="_blank" 
+                        className="social-icon"
+                        aria-label="LinkedIn link"
+                    >
                         <FaLinkedinIn />
                     </Link>
                 </div>

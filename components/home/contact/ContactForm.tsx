@@ -170,6 +170,7 @@ export default function ContactForm() {
                 minLength={50}
                 maxLength={2000}
             />
+            <label htmlFor="company">Company</label>
             <input
                 name="company"
                 id="company"

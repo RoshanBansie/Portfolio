@@ -73,7 +73,7 @@ export default function About() {
                     className="philosophy-section-header"
                     initial={{opacity: 0, y: 40}}
                     whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 0.5, delay: 0.5}}
+                    transition={{duration: 0.5}}
                     viewport={{once: true}}
                 >
                     <h2>My development philosophy</h2>
@@ -86,7 +86,7 @@ export default function About() {
                                 key={headline}
                                 initial={{opacity: 0, y: 40}}
                                 whileInView={{opacity: 1, y: 0}}
-                                transition={{duration: 0.5, delay: 0.5}}
+                                transition={{duration: 0.5}}
                                 viewport={{once: true}}
                             >
                                 <h3>{headline}</h3>
@@ -101,7 +101,7 @@ export default function About() {
                     className="workflow-section-header"
                     initial={{opacity: 0, y: 40}}
                     whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 0.5, delay: 0.5}}
+                    transition={{duration: 0.5}}
                     viewport={{once: true}}
                 >
                     <h2>My workflow</h2>
@@ -121,7 +121,7 @@ export default function About() {
                                 key={"headline-"+ i}
                                 initial={{opacity: 0, y: 40}}
                                 whileInView={{opacity: 1, y: 0}}
-                                transition={{duration: 0.5, delay: i*0.2}}
+                                transition={{duration: 0.5, delay: i*0.1}}
                                 viewport={{once: true}}
                             >
                                 <div className="workflow-item-enumerator">
