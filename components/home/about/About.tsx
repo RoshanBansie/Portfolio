@@ -71,8 +71,8 @@ export default function About() {
             <div className="philosophy-container">
                 <motion.div 
                     className="philosophy-section-header"
-                    initial={{opacity: 0, y: 40}}
-                    whileInView={{opacity: 1, y: 0}}
+                    initial={{y: 40}}
+                    whileInView={{y: 0}}
                     transition={{duration: 0.5}}
                     viewport={{once: true}}
                 >
@@ -99,8 +99,8 @@ export default function About() {
             <div className="workflow-container">
                 <motion.div 
                     className="workflow-section-header"
-                    initial={{opacity: 0, y: 40}}
-                    whileInView={{opacity: 1, y: 0}}
+                    initial={{y: 40}}
+                    whileInView={{y: 0}}
                     transition={{duration: 0.5}}
                     viewport={{once: true}}
                 >
@@ -119,8 +119,8 @@ export default function About() {
                         return (
                             <motion.li 
                                 key={"headline-"+ i}
-                                initial={{opacity: 0, y: 40}}
-                                whileInView={{opacity: 1, y: 0}}
+                                initial={{y: 40}}
+                                whileInView={{y: 0}}
                                 transition={{duration: 0.5, delay: i*0.1}}
                                 viewport={{once: true}}
                             >

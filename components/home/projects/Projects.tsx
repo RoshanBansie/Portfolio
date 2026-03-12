@@ -15,8 +15,8 @@ export default function Projects({projects}: ProjectsSectionProps) {
         <section className="projects-section" id="projects">
             <motion.div 
                 className="projects-section-header"
-                initial={{opacity: 0, y: 40}}
-                whileInView={{opacity: 1, y: 0}}
+                initial={{y: 40}}
+                whileInView={{y: 0}}
                 transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
@@ -28,8 +28,8 @@ export default function Projects({projects}: ProjectsSectionProps) {
             </motion.div>
             <motion.div 
                 className="projects-container"
-                initial={{opacity: 0, x: -40}}
-                whileInView={{opacity: 1, x: 0}}
+                initial={{x: -40}}
+                whileInView={{x: 0}}
                 transition={{duration: 0.5}}
                 viewport={{once: true}}
             >

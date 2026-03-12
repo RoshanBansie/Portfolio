@@ -170,8 +170,8 @@ export default function Education() {
         <section className="education-section" id="education">
             <motion.div 
                 className="education-section-header"
-                initial={{opacity: 0, x: -40}}
-                whileInView={{opacity: 1, x: 0}}
+                initial={{x: -40}}
+                whileInView={{x: 0}}
                 transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
@@ -183,8 +183,8 @@ export default function Education() {
             </motion.div>
             <motion.div 
                 className="education-content"
-                initial={{opacity: 0, x: 40}}
-                whileInView={{opacity: 1, x: 0}}
+                initial={{x: 40}}
+                whileInView={{x: 0}}
                 transition={{duration: 0.5}}
                 viewport={{once: true}}
             >

@@ -19,8 +19,8 @@ export default function ContactSection() {
         <section className="section-container" id="contact">
             <motion.div 
                 className="contact-section-header"
-                initial={{opacity: 0, y: 40}}
-                whileInView={{opacity: 1, y: 0}}
+                initial={{y: 40}}
+                whileInView={{y: 0}}
                 transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
@@ -33,8 +33,8 @@ export default function ContactSection() {
             </motion.div>
             <motion.div 
                 className="contact-content"
-                initial={{opacity: 0, y: 40}}
-                whileInView={{opacity: 1, y: 0}}
+                initial={{y: 40}}
+                whileInView={{y: 0}}
                 transition={{duration: 0.5, delay: 0.5}}
                 viewport={{once: true}}
             >

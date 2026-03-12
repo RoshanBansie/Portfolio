@@ -10,8 +10,8 @@ export default function Page() {
         <section className="projects-page">
             <motion.section 
                 className="projects-page-header"
-                initial={{opacity: 0, y: 40}}
-                whileInView={{opacity: 1, y: 0}}
+                initial={{y: 40}}
+                whileInView={{y: 0}}
                 transition={{duration: 0.5}}
                 viewport={{once: true}}
             >
@@ -28,8 +28,8 @@ export default function Page() {
                         <motion.div
                             className="project-card-animation-container"
                             key={"project-animation-"+i}
-                            initial={{opacity: 0, y: 40}}
-                            whileInView={{opacity: 1, y: 0}}
+                            initial={{y: 40}}
+                            whileInView={{y: 0}}
                             transition={{duration: 0.5, delay: i*0.2+0.5}}
                             viewport={{once: true}}
                         >
