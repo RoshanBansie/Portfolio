@@ -1,118 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal portfolio
+This repository contains the souce code for my portfolio website where I list 
+my recent projects, techstack, development philosophy, workflow and educational milestones.
 
-## Getting Started
+## Live demo
+This portfolio is publicy accessible at roshanbansie.nl and is deployed using Vercel. 
+It automatically updates through a CI/CD pipeline between Vercel and Github whenever changes are pushed to the main branch.
 
-First, run the development server:
+## Purpose
+The purpose of this website is to showcase my current progression in fullstack (web)development 
+by documenting reccent projects. Also, this website shows my identity as developer by explaining my workflow, 
+what technologies I use and what paradigms are important to me.
 
-```bash
+## Featuers
+This websites includes the following featuers:
+- Projects documentation
+- Techstack
+- About me section
+  - Development philosophy
+  - Workflow
+  - Educational milestones
+- Contact form
+- Dark/light mode toggle
+- Resume download
+- Link to my Github profile
+
+## Techstack
+For this website I've used the following technologies:
+
+### Frontend
+- Next.js
+- Typescript
+- CSs
+
+### Backend
+- Next.js' API router which includes Node.js
+
+### Deployment
+- Vercel
+
+### Email service
+- Resend
+
+## Website structure
+This website is organized into several main pages:
+- Home page
+  - Hero
+  - Projects preview
+  - About
+    - Techstack
+    - Development philosphy
+    - Workflow
+    - Educational milestones
+  - Contact form
+- Projects
+  - List of clickable project cards
+- Project page
+  - Project documentation
+
+## Design decisions
+
+### UI
+The design focuses on a modern dark-themed minimalistic design.
+I chose for a dark-theme color palette because it makes the website look professional 
+and it makes the website's elements (i.e. the images, paragraphs etc.) stand out more. 
+The minimalistic design choice enlarges the UX by making the navigation elements and 
+action buttons more visible due to absence of non-functional decorative elements.
+
+### Accessibility
+To aid screen readers, all images are provided with alternative text, the contact form input fields 
+include semantic names and labels and all links contain aria-labels.
+Also, this website includes a light mode toggle for people who may find the dark-theme hard to read.
+On top of that, the contact form includes meaningful error messages to aid the user in filling in the form.
+
+### Responsiveness
+This webiste is responsive for mobile view and for wide-desktop views.
+
+## Performance optimizations
+
+### Images
+All images are converted to .webp by default Next.js and while the images are loaded, 
+a skeleton loader is displayed to hint that an image is being fetched.
+
+### Prefetching
+Each link on this website is implemented with Next.js' Link component. 
+These Link components prefetch the resources by default. 
+This means that Next.js only fetches the code for the current route and in the background 
+it requests the code of the other routes and puts these files in the browser's cache. 
+This method reduces the initial page loads.
+
+## SEO considerations
+To improve SEO, all layout and page files are server components so Google and 
+other search engines can see how this website is organized (i.e. the hirarchy of all the pages). 
+On top of that, I've provided a meaningful title and description in the meta tags of the HTML head. 
+At last, this websites contains informative images and contains sufficient text to lead 
+the user in understanding the contents of this website.
+
+## Getting started
+
+### Dependencies
+See the package.json file to view the libraries that have been installed to make this website funcion accordingly.
+To install all dependencies, run:
+npm install
+
+### Run development
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build code
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
+| Variable | Description |
+| RESEND_API_KEY | API key for Resend to authenticate myself in order to send emails
+| DOMAIN | Domain on which this website is being hosted |
+| EMAIL | Mailbox to which emails from the contact form need to be send |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Future improvements
+- Add more accessibility options like:
+  - Toggle bigger text
+  - Toggle paragraph colors (default is grey but I can toggle to white for more visibility if preferred).
+  - Toggle dyslectic-proof font
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-
-
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL!;
-
-type ContactFormData = {
-  fullName: string;
-  email: string;
-  subject: string;
-  message: string;
-  company?: string; // honeypot
-};
-
-const RATE_LIMIT = new Map<string, number>();
-
-export async function POST(req: Request) {
-  try {
-    const ip =
-      req.headers.get("x-forwarded-for") ??
-      "unknown";
-
-    const lastRequest = RATE_LIMIT.get(ip);
-
-    if (lastRequest && Date.now() - lastRequest < 10000) {
-      return Response.json(
-        { error: "Too many requests" },
-        { status: 429 }
-      );
-    }
-
-    RATE_LIMIT.set(ip, Date.now());
-
-    const body: ContactFormData = await req.json();
-
-    const { fullName, email, subject, message, company } = body;
-
-    // Honeypot spam check
-    if (company) {
-      return Response.json({ ok: true });
-    }
-
-    // Basic validation
-    if (!fullName || !email || !subject || !message) {
-      return Response.json(
-        { error: "Missing fields" },
-        { status: 400 }
-      );
-    }
-
-    const { error } = await resend.emails.send({
-      from: "Website Contact <contact@yourdomain.com>",
-      to: [CONTACT_EMAIL],
-      subject: `Contact Form: ${subject}`,
-      reply_to: email,
-      html: `
-        <h2>New Contact Form Message</h2>
-        <p><strong>Name:</strong> ${fullName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p>${message}</p>
-      `,
-    });
-
-    if (error) {
-      return Response.json(
-        { error: "Email failed" },
-        { status: 500 }
-      );
-    }
-
-    return Response.json({ success: true });
-
-  } catch (err) {
-    return Response.json(
-      { error: "Server error" },
-      { status: 500 }
-    );
-  }
-}
+## Author
+Created by Roshan Bansie, a BSc Computer Science student at the University of Amsterdam focused on
+building modern-looking minimalistic and accessible full-stack webapplications that solve modern-day problems.
